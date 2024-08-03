@@ -1,8 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../../assests/images/logo.webp';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
@@ -23,7 +24,7 @@ const Header = () => {
                 <Nav.Link href="#contact-us">Contact Us</Nav.Link>
               </Nav>
               <Nav>
-                <Nav.Link href="tel:+919888877182">+91 9888877182</Nav.Link>
+                <Nav.Link href="tel:+919888877182"><FontAwesomeIcon icon={faPhone} /> +91 9888877182</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
