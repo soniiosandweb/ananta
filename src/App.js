@@ -1,9 +1,13 @@
-import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 
+
 function App() {
+
+  // useEffect(() => {
+  //   WebFont.load
+  // })
   return (
     <BrowserRouter>
       <Routes>

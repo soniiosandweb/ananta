@@ -1,0 +1,7 @@
+.footer-links li:first-child{
+    padding-left: 0;
+    border-left: 0;
+}
+.footer-links li{
+    border-left: 1px solid #000;
+}
