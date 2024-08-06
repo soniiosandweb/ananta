@@ -1,8 +1,13 @@
 import MetaData from "../Layout/MetaData"
 import AboutUs from "./AboutUs/AboutUs"
+import Amenities from "./Amenities/Amenities"
 import BannerSlider from "./BannerSlider/BannerSlider"
+import ContactUs from "./ContactUs/ContactUs"
 import FloorPlan from "./FloorPlan/FloorPlan"
+import Gallery from "./Gallery/Gallery"
 import ListSection from "./ListSection/ListSection"
+import ProjectConnectivity from "./ProjectConnectivity/ProjectConnectivity"
+import SmartLiving from "./SmartLiving/SmartLiving"
 
 const Home = () => {
     return(
@@ -16,6 +21,11 @@ const Home = () => {
             <ListSection />
             <AboutUs />
             <FloorPlan />
+            <SmartLiving />
+            <Amenities />
+            <ProjectConnectivity />
+            <Gallery />
+            <ContactUs />
         </>
     )
 }

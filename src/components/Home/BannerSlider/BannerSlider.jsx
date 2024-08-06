@@ -48,7 +48,7 @@ const BannerSlider = () => {
             </div>
         ))}
       </Slider>
-      <div className='max-w-5xl m-auto absolute top-0 left-0 right-0 h-full w-full text-center z-10 flex flex-col items-center justify-center gap-5 text-white px-2.5'>
+      <div className='max-w-5xl m-auto absolute top-0 left-0 right-0 h-full w-full text-center z-10 flex flex-col items-center justify-center gap-5 text-white px-2.5 pt-12 pb-2.5'>
         <h1 className='text-3xl md:text-5xl font-semibold'>Where Luxury Meets Innovation - Unveiling a Life Beyond Ordinary</h1>
         <h2 className='text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design and Exclusive Amenities</h2>
         <div className='h-12'></div>

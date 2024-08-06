@@ -7,8 +7,14 @@
   src: url('./assests/font/TTNorms-Regular.otf');
 }
 
+@font-face {
+  font-family: "Rubik";
+  src: url('./assests/font/rubik.woff2');
+}
+
 body {
   margin: 0;
+  position: relative;
   font-family: 'TT Norms', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,8 +24,19 @@ code {
   font-family: 'Helvetica', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Helvetica', sans-serif;
+}
+.font-norms{
+  font-family: 'TT Norms', sans-serif;
+}
+
+.font-rubik{
+  font-family: "Rubik";
+  -webkit-text-stroke-width: 1px;
+  stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  stroke: #000;
 }
 .primary-bg{
   background-color: #f7f7f7;

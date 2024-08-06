@@ -250,6 +250,11 @@ module.exports = {
       0: '0',
       DEFAULT: '1',
     },
+    flexBasis: {
+      '1/3': '31%',
+      '1/4': '22%',
+      'full': '100%',
+    },
     fontFamily: {
       sans: [
         'ui-sans-serif',
@@ -296,6 +301,7 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
+      '80': ['80px', { lineHeight: '1em' }],
     },
     fontWeight: {
       thin: '100',
@@ -805,6 +811,7 @@ module.exports = {
       '9/12': '75%',
       '10/12': '83.333333%',
       '11/12': '91.666667%',
+      '60' : '60px',
       full: '100%',
       screen: '100vw',
       min: 'min-content',
