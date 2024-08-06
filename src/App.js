@@ -5,11 +5,8 @@ import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 
 function App() {
 
-  // useEffect(() => {
-  //   WebFont.load
-  // })
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/ananta-react'>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
