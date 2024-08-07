@@ -9,7 +9,7 @@ const PageNotFound = () => {
             <div className="w-20 h-1 bg-black m-auto"></div>
             <p className="max-w-md mx-auto">We're really sorry but we can't seem to find the page you were looking for.</p>
 
-            <Link to="/" className="w-auto mx-auto text-xs font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white">Back to home</Link>
+            <Link to="/" className="w-auto mx-auto text-xs font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white" reloadDocument={true}>Back to home</Link>
         </section>
     )
 }
