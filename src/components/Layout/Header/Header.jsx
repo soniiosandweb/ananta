@@ -7,7 +7,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { HashLink } from 'react-router-hash-link';
+import EnquireForm from '../EnquireForm/EnquireForm';
 
 const Header = () => {
   const location = useLocation();
@@ -24,30 +24,37 @@ const Header = () => {
     {
       name: "About Us",
       redirect: "/#about-us",
+      id: "about-us",
     },
     {
       name: "Floor Plan",
       redirect: "/#floor-plan",
+      id: "floor-plan",
     },
     {
       name: "Smart Living",
       redirect: "/#smart-living",
+      id: "smart-living",
     },
     {
       name: "Amenities",
       redirect: "/#amenities",
+      id: "amenities",
     },
     {
       name: "Connectivity",
       redirect: "/#connectivity",
+      id: "connectivity",
     },
     {
       name: "Gallery",
       redirect: "/#gallery",
+      id: "gallery",
     },
     {
       name: "Contact Us",
       redirect: "/#contact-us",
+      id: "contact-us",
     },
   ];
 
@@ -65,6 +72,20 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
+     // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+   
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      console.log(location.hash.slice(1))
+      if (element) {
+        element.style.scrollMarginTop = '50px';
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
+      }
+    }
     // eslint-disable-next-line
   }, []);
 
@@ -74,7 +95,7 @@ const Header = () => {
       <header className={`px-0 sm:px-5 py-2.5 bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ? 'fixed home-header' : 'sticky' }`}>
         <div className="flex items-center">
           <div className="w-1/4 lg:w-1/6 xl:w-1/4 px-2.5">
-            <NavLink to="/" className="block w-auto sm:w-max">
+            <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
                 src={logo}
                 alt="The Ananta Aspire"
@@ -86,7 +107,7 @@ const Header = () => {
           <div className="hidden lg:block w-3/6 xl:w-2/4 px-2.5">
             <nav className="flex gap-5 items-center justify-center flex-wrap">
               {menuLinks.map((item,i) => (
-                <HashLink to={item.redirect} key={i} className="text-sm font-medium hover:text-primary-brown header-nav-link" reloadDocument={true} smooth>{item.name}</HashLink>
+                <NavLink smooth="true" to={item.redirect} key={i} className="text-sm font-medium hover:text-primary-brown header-nav-link" reloadDocument={true}>{item.name}</NavLink>
               ))}
             </nav>
           </div>
@@ -130,7 +151,7 @@ const Header = () => {
           <div className="flex justify-end">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
-          <p>Please Fill In Your Details</p>
+          <EnquireForm title="Please Fill In Your Details" setOpen={setOpen} />
         </div>
       </Dialog>
     </>

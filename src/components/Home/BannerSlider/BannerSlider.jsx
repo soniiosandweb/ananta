@@ -4,7 +4,6 @@ import banner1 from "../../../assests/images/slider/banner1.jpeg";
 import banner2 from "../../../assests/images/slider/banner2.jpeg";
 import banner3 from "../../../assests/images/slider/banner3.jpeg";
 import banner4 from "../../../assests/images/slider/banner4.jpeg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHomeLg } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,7 +43,7 @@ const BannerSlider = () => {
       <Slider {...settings}>
         {slides.map((el, i) => (
             <div className="w-full banner-slider" key={i}>
-                <LazyLoadImage src={el.image} alt="Banner" className="object-cover object-center h-full w-full" />
+                <img src={el.image} alt="Banner" className="object-cover object-center h-full w-full" />
             </div>
         ))}
       </Slider>

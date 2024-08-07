@@ -1,4 +1,3 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import smartHomes from '../../../assests/images/amenities/smart-home.png';
 import sketch from '../../../assests/images/amenities/sketch.png';
 import projects from '../../../assests/images/amenities/check-list.png';
@@ -112,7 +111,7 @@ const Amenities = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-flow-row gap-3.5 md:gap-7 p-2.5">
                 {amenitiesItems.map((item, i) => (
                     <div key={i} className='p-5 bg-primary-brown rounded-2xl text-white' style={{boxShadow : "0px 3px 20px 0px rgba(0, 0, 0, 0.30196078431372547)"}}>
-                        <LazyLoadImage
+                        <img
                             src={item.image}
                             alt={item.title}
                             className='w-60 mx-auto mb-3.5'

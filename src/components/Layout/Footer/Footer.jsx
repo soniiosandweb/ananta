@@ -7,11 +7,11 @@ const Footer = () => {
     const footerLinks = [
         {
             name: "Privacy Policy",
-            link: "/"
+            link: "/privacy-policy"
         },
         {
             name: "Terms & Conditions",
-            link: "/"
+            link: "/terms-conditions"
         },
     ]
 
@@ -23,13 +23,13 @@ const Footer = () => {
                         <p>RERA No : PBRERA-SAS79-PR0777</p>
                         <ul className="mt-7 flex items-center footer-links">
                             {footerLinks.map((item, i) => (
-                                <li className="px-1.5" key={i}><NavLink to={item.link}>{item.name}</NavLink></li>
+                                <li className="px-1.5" key={i}><NavLink to={item.link} reloadDocument={true}>{item.name}</NavLink></li>
                             ))}
                         </ul>
                         <p>Copyright &copy; {new Date().getFullYear()} The Ananta Aspire. All Rights Reserved.</p>
                     </div>
                     <div className="w-full md:w-1/3 p-2.5 flex flex-col items-center md:items-end">
-                        <NavLink to="/" className="block w-max">
+                        <NavLink to="/" className="block w-max" reloadDocument={true}>
                             <LazyLoadImage
                                 src={logo}
                                 alt="The Ananta Aspire"

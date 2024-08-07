@@ -1,4 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import floorPlan1 from '../../../assests/images/floorplan/3-BHK-1830-Sq.-feet.jpeg';
 import floorPlan2 from '../../../assests/images/floorplan/3-BHK-1830-Sq.-feet.jpeg';
 import floorPlan3 from '../../../assests/images/floorplan/41-BHK-2900-sq-feet.jpeg';
@@ -18,7 +17,7 @@ const FloorPlan = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 p-2.5">
                 {/* Plan 1 */}
                 <div className="p-3.5 border-primary-brown border-2 rounded-tl-3xl rounded-br-3xl flex flex-col gap-5 items-center justify-between">
-                    <LazyLoadImage
+                    <img
                         src={floorPlan1}
                         alt="3 BHK 1830 Sq. feet"
                         className="p-2.5 cursor-pointer"
@@ -43,7 +42,7 @@ const FloorPlan = () => {
 
                 {/* Plan 2 */}
                 <div className="p-3.5 border-primary-brown border-2 rounded-tl-3xl rounded-br-3xl flex flex-col gap-5 items-center justify-between">
-                    <LazyLoadImage
+                    <img
                         src={floorPlan2}
                         alt="3+1 BHK- 2245 sq feet"
                         className="p-2.5 cursor-pointer"
@@ -68,7 +67,7 @@ const FloorPlan = () => {
 
                 {/* Plan 3 */}
                 <div className="p-3.5 border-primary-brown border-2 rounded-tl-3xl rounded-br-3xl flex flex-col gap-5 items-center justify-between">
-                    <LazyLoadImage
+                    <img
                         src={floorPlan3}
                         alt="4+1 BHK (2900 sq feet)"
                         className="p-2.5 cursor-pointer"

@@ -1,5 +1,4 @@
 import './Gallery.css';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import image1 from '../../../assests/images/gallery/image-1.jpg';
 import image2 from '../../../assests/images/gallery/image-2.jpeg';
 import image3 from '../../../assests/images/gallery/image-3.jpeg';
@@ -93,7 +92,7 @@ const Gallery = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 p-2.5">
                 {images.map((item, i) => (
                     <div className='relative overflow-hidden rounded-md gallery-image h-full' key={i}>
-                        <LazyLoadImage
+                        <img
                             src={item.src}
                             alt={item.title}
                             className='rounded-md hover:scale-110 w-full h-full object-cover transition ease-in-out duration-300 cursor-pointer'
