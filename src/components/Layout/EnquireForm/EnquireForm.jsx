@@ -109,11 +109,11 @@ const EnquireForm = ({title, setOpen}) => {
                     <input type="submit" value="Enquire Now" className="text-md font-semibold capitalize cursor-pointer bg-primary-brown px-3.5 py-1.5 rounded-md text-white"/>
                 </div>
                 {formError && (
-                    <p className="text-red-400 py-2.5 text-sm">{formError}</p>
+                    <p className="text-red-400 py-2.5 text-md">{formError}</p>
                 )}
 
                 {formSuccess && (
-                    <p className="text-green-400 py-2.5 text-sm">{formSuccess}</p>
+                    <p className="text-green-700 py-2.5 text-md">{formSuccess}</p>
                 )}
             </div>
         </form>
