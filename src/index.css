@@ -11,11 +11,12 @@
   font-family: "Rubik";
   src: url('./assests/font/rubik.woff2');
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   position: relative;
-  scroll-behavior: smooth;
   font-family: 'TT Norms', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

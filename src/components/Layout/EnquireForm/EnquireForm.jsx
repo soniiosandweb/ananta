@@ -3,6 +3,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput, {isPossiblePhoneNumber, isValidPhoneNumber} from "react-phone-number-input";
 import { useState } from 'react';
 import axios from 'axios';
+import { CircularProgress } from '@mui/material';
 
 const EnquireForm = ({title, setOpen}) => {
 
@@ -11,6 +12,7 @@ const EnquireForm = ({title, setOpen}) => {
     const [phoneError, setPhoneError] = useState("");
     const [formSuccess, setFormSuccess] = useState("");
     const [formError, setFormError] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
@@ -25,6 +27,8 @@ const EnquireForm = ({title, setOpen}) => {
             return false;
         }
 
+        setLoading(true);
+
         axios({
             method: "post",
             url: "https://iosandweb.net/ananta-react/api/enquire-us-api.php",
@@ -37,14 +41,18 @@ const EnquireForm = ({title, setOpen}) => {
         .then(function (response) {
             //handle success
             if (response.data.status === 0) {
+                setLoading(false);
                 setFormSuccess("We appreciate you contacting us !! Our team will be in touch with you soon.");
                 resetForm();
                 setTimeout(() => {
                     setFormSuccess('');
-                    setOpen(false);
+                    if(setOpen){
+                        setOpen(false);
+                    }
                 }, 5000);
                 
             } else {
+                setLoading(false);
                 setFormError("Some error occured");
                 resetForm();
                 setTimeout(() => {
@@ -54,6 +62,7 @@ const EnquireForm = ({title, setOpen}) => {
         })
         .catch(function (response) {
             //handle error
+            setLoading(false);
             console.log(response);
             setFormError("Some error occured");
             resetForm();
@@ -105,8 +114,19 @@ const EnquireForm = ({title, setOpen}) => {
                         <p className="text-red-400 text-sm">{phoneError}</p>
                     )}
                 </div>
-                <div className="mt-2.5 text-center">
-                    <input type="submit" value="Enquire Now" className="text-md font-semibold capitalize cursor-pointer bg-primary-brown px-3.5 py-1.5 rounded-md text-white"/>
+                <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
+                    <input type="submit" value="Enquire Now" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={loading} />
+                    {loading && (
+                        <CircularProgress
+                            sx={{
+                            color: (theme) =>
+                                theme.palette.grey[theme.palette.mode === 'dark' ? 400 : 800],
+                            }}
+                            size={35}
+                            thickness={4}
+                            value={100}
+                        />
+                    )}
                 </div>
                 {formError && (
                     <p className="text-red-400 py-2.5 text-md">{formError}</p>

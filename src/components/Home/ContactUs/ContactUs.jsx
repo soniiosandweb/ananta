@@ -9,7 +9,6 @@ const ContactUs = () => {
             <div className="flex flex-col md:flex-row p-2.5 gap-5">
                 <div className="w-full md:w-1/2 p-2.5">
                     <iframe 
-                        loading="lazy" 
                         src="https://maps.google.com/maps?q=Ananta%20Aspire%20NH%207%2C%20Patiala%20Rd%2C%20Utrathiya%2C%20Zirakpur%2C%20Nabha%2C%20Punjab%20140603&t=m&z=18&output=embed&iwloc=near" 
                         title="Ananta Aspire NH 7, Patiala Rd, Utrathiya, Zirakpur, Nabha, Punjab 140603" 
                         aria-label="Ananta Aspire NH 7, Patiala Rd, Utrathiya, Zirakpur, Nabha, Punjab 140603"

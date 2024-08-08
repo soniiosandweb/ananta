@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Dialog } from "@mui/material";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import EnquireForm from '../EnquireForm/EnquireForm';
@@ -68,26 +68,23 @@ const Header = () => {
     } else {
       setScrollClass('scroll');
     }
-  }
+  };
 
   useEffect(() => {
+
     window.addEventListener("scroll", listenScrollEvent);
-     // eslint-disable-next-line
-  }, []);
 
-  useEffect(() => {
-   
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
       console.log(location.hash.slice(1))
       if (element) {
         element.style.scrollMarginTop = '50px';
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ behavior: 'smooth'});
         // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }
     }
-    // eslint-disable-next-line
-  }, []);
+  }, [location]);
+
 
   return (
     <>
@@ -107,7 +104,7 @@ const Header = () => {
           <div className="hidden lg:block w-3/6 xl:w-2/4 px-2.5">
             <nav className="flex gap-5 items-center justify-center flex-wrap">
               {menuLinks.map((item,i) => (
-                <NavLink smooth="true" to={item.redirect} key={i} className="text-sm font-medium hover:text-primary-brown header-nav-link" reloadDocument={true}>{item.name}</NavLink>
+                <Link smooth="true" to={item.redirect} key={i} className="text-sm font-medium hover:text-primary-brown header-nav-link" >{item.name}</Link>
               ))}
             </nav>
           </div>
