@@ -8,7 +8,7 @@ import PageNotFound from './components/Layout/PageNotFound';
 function App() {
 
   return (
-    <BrowserRouter basename='/ananta-react'>
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
