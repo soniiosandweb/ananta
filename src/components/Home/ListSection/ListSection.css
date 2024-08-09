@@ -11,7 +11,7 @@
 .list-sections li:last-child::after {
     display: none;
 }
-@media (max-width: 400px){
+@media (max-width: 480px){
     .list-sections{
         flex-direction: column;
     }

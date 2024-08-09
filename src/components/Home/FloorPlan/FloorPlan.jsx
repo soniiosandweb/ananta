@@ -37,7 +37,7 @@ const FloorPlan = () => {
                         }}
                         className="single-lightbox"
                     />
-                    <button className="rounded-tl-3xl rounded-br-3xl border-primary-brown border-2 py-3 px-6 text-sm font-medium text-white bg-primary-brown hover:bg-white hover:text-primary-brown leading-4">3 BHK 1830 Sq. feet</button>
+                    <button className="rounded-tl-3xl rounded-br-3xl border-primary-brown border-2 py-3 px-6 text-sm font-medium text-white bg-primary-brown hover:bg-white hover:text-primary-brown leading-4">3 BHK (1830 sq. feet)</button>
                 </div>
 
                 {/* Plan 2 */}
@@ -62,7 +62,7 @@ const FloorPlan = () => {
                         }}
                         className="single-lightbox"
                     />
-                    <button className="rounded-tl-3xl rounded-br-3xl border-primary-brown border-2 py-3 px-6 text-sm font-medium text-white bg-primary-brown hover:bg-white hover:text-primary-brown leading-4">3+1 BHK- 2245 sq feet</button>
+                    <button className="rounded-tl-3xl rounded-br-3xl border-primary-brown border-2 py-3 px-6 text-sm font-medium text-white bg-primary-brown hover:bg-white hover:text-primary-brown leading-4">3+1 BHK (2245 sq. feet)</button>
                 </div>
 
                 {/* Plan 3 */}
@@ -87,7 +87,7 @@ const FloorPlan = () => {
                         }}
                         className="single-lightbox"
                     />
-                    <button className="rounded-tl-3xl rounded-br-3xl border-primary-brown border-2 py-3 px-6 text-sm font-medium text-white bg-primary-brown hover:bg-white hover:text-primary-brown leading-4">4+1 BHK (2900 sq feet)</button>
+                    <button className="rounded-tl-3xl rounded-br-3xl border-primary-brown border-2 py-3 px-6 text-sm font-medium text-white bg-primary-brown hover:bg-white hover:text-primary-brown leading-4">4+1 BHK (2900 sq. feet)</button>
                 </div>
                 
             </div>
