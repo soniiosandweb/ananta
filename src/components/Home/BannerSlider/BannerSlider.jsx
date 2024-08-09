@@ -58,6 +58,7 @@ const BannerSlider = () => {
             <li className='text-sm flex gap-2 items-center'><FontAwesomeIcon icon={faHomeLg} /> <span>4+1 BHK Apartments</span></li>
         </ul>
       </div>
+      <p className='text-xs sm:text-sm font-semibold p-1 absolute mx-auto bottom-5 right-0 left-0 text-white w-max'>*Image shown is for illustration purposes only</p>
     </section>
   );
 };

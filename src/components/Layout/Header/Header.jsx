@@ -1,5 +1,5 @@
 import './Header.css';
-import logo from "../../../assests/images/logo.webp";
+import logo from "../../../assests/images/logo-black.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Dialog } from "@mui/material";
@@ -89,8 +89,8 @@ const Header = () => {
   return (
     <>
       {/* Header */}
-      <header className={`px-0 sm:px-5 py-2.5 bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ? 'fixed home-header' : 'sticky' }`}>
-        <div className="flex items-center">
+      <header className={`bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ? 'sticky home-header' : 'sticky' }`}>
+        <div className="px-0 sm:px-5 py-2.5 flex items-center">
           <div className="w-1/4 lg:w-1/6 xl:w-1/4 px-2.5">
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
@@ -123,7 +123,8 @@ const Header = () => {
       </NavLink>
 
       {/* Download Brochure Button */}
-      <button tabIndex='-1' className="w-max text-xs font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white fixed z-20 top-1/2 -right-12 -rotate-90 download-broucher-btn" onClick={handleOpen}>Download Brochure</button>
+      <div className='sticky h-0 z-20' style={{top: "45%"}}><button tabIndex='-1' className="w-max text-xs font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white absolute -rotate-90 download-broucher-btn" style={{right: "-46px"}} onClick={handleOpen}>Download Brochure</button>
+      </div>
 
       {/* Popup */}
       <Dialog

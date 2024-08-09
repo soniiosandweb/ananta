@@ -98,6 +98,7 @@ const Gallery = () => {
                             className='rounded-md hover:scale-110 w-full h-full object-cover transition ease-in-out duration-300 cursor-pointer'
                             onClick={() => setIndex(i)}
                         />
+                        <p className='text-xs sm:text-sm font-semibold p-1 absolute bottom-2.5 right-2.5 left-auto text-white w-auto'>*Image shown is for illustration purposes only</p>
                     </div>
                 ))}
                 <Lightbox

@@ -21,6 +21,7 @@
 }
 .scroll.home-header{
     background-color: transparent;
+    height: 0;
 }
 .scroll.home-header .header-nav-link{
     color: #fff;
