@@ -117,7 +117,7 @@ const Header = () => {
       </header>
 
       {/* Whatsapp Button */}
-      <NavLink to='https://api.whatsapp.com/send?phone=919888877182' target="_blank" className="fixed z-20 bg-primary-lightGreen text-white text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center overflow-hidden" style={{left: "8%", bottom: "15%"}}>
+      <NavLink to='https://api.whatsapp.com/send?phone=919888877182' target="_blank" className="fixed z-20 bg-primary-lightGreen text-white text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center overflow-hidden" style={{left: "20px", bottom: "24px"}}>
         <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation" />
         Whats App Now 
       </NavLink>
