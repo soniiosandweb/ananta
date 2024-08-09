@@ -42,7 +42,7 @@ const EnquireForm = ({title, setOpen}) => {
             //handle success
             if (response.data.status === 0) {
                 setLoading(false);
-                setFormSuccess("We appreciate you contacting us !! Our team will be in touch with you soon.");
+                setFormSuccess("THANK YOU! Our Team Will Contact You Shortly!");
                 resetForm();
                 setTimeout(() => {
                     setFormSuccess('');
