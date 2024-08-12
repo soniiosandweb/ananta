@@ -57,7 +57,7 @@ const EnquireForm = ({title, setOpen}) => {
                     if(setOpen){
                         setOpen(false);
                     }
-                }, 5000);
+                }, 10000);
                 
             } else {
                 setLoading(false);
@@ -65,7 +65,7 @@ const EnquireForm = ({title, setOpen}) => {
                 resetForm();
                 setTimeout(() => {
                     setFormError('');
-                }, 5000);
+                }, 10000);
             }
         })
         .catch(function (response) {
@@ -76,7 +76,7 @@ const EnquireForm = ({title, setOpen}) => {
             resetForm();
             setTimeout(() => {
                 setFormError('');
-            }, 5000);
+            }, 10000);
         });
 
     }
@@ -99,6 +99,14 @@ const EnquireForm = ({title, setOpen}) => {
     return(
         <form className="enquire-form py-6"  onSubmit={handleSubmit}>
             <div className="form-section text-left">
+                {formError && (
+                    <p className="text-red-400 py-2.5 text-md">{formError}</p>
+                )}
+
+                {formSuccess && (
+                    <p className="text-green-700 py-2.5 text-md">{formSuccess}</p>
+                )}
+
                 <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
                 <div className="py-2">
                     <input
@@ -161,13 +169,7 @@ const EnquireForm = ({title, setOpen}) => {
                 </div>
                 <p className='text-md mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> *I give my consent for the privacy policy to apply to the processing of the provided data. I give authority to the website owner and its representatives permission to contact me via phone, text, email, or whatsapp with its offers and products. This agreement takes precedence over any DNC/NDNC registration.</p>
 
-                {formError && (
-                    <p className="text-red-400 py-2.5 text-md">{formError}</p>
-                )}
-
-                {formSuccess && (
-                    <p className="text-green-700 py-2.5 text-md">{formSuccess}</p>
-                )}
+                
             </div>
         </form>
     )
