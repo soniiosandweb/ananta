@@ -5,3 +5,7 @@
 .footer-links li{
     border-left: 1px solid #000;
 }
+
+.text-brown {
+    color: rgb(143 100 69);
+}

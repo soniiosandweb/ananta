@@ -115,7 +115,9 @@ const EnquireForm = ({title, setOpen}) => {
                     )}
                 </div>
                 <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
-                    <input type="submit" value="Enquire Now" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={loading} />
+                    <input type="submit" value="Submit" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={loading} />
+
+                    
                     {loading && (
                         <CircularProgress
                             sx={{
@@ -128,6 +130,8 @@ const EnquireForm = ({title, setOpen}) => {
                         />
                     )}
                 </div>
+                <p className='text-md mt-5'>*I give my consent for the privacy policy to apply to the processing of the provided data. I give authority to the website owner and its representatives permission to contact me via phone, text, email, or whatsapp with its offers and products. This agreement takes precedence over any DNC/NDNC registration.</p>
+
                 {formError && (
                     <p className="text-red-400 py-2.5 text-md">{formError}</p>
                 )}
