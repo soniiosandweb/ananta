@@ -8,6 +8,7 @@ import { CircularProgress } from '@mui/material';
 const EnquireForm = ({title, setOpen}) => {
 
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState();
     const [phoneError, setPhoneError] = useState("");
     const [formSuccess, setFormSuccess] = useState("");
@@ -35,6 +36,7 @@ const EnquireForm = ({title, setOpen}) => {
             data: JSON.stringify({
                     name: name,
                     mobileNumber: mobileNumber,
+                    email: email,
                 }),
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
         })
@@ -76,6 +78,7 @@ const EnquireForm = ({title, setOpen}) => {
     const resetForm = () =>{
         setName("")
         setMobileNumber('');
+        setEmail('');
     }
 
     return(
@@ -95,13 +98,24 @@ const EnquireForm = ({title, setOpen}) => {
                     />
                 </div>
                 <div className="py-2">
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="py-2">
                     <PhoneInput
                         type="tel" 
                         id="mobile-number"
                         name="mobile-number"
-                        placeholder="Mobile Number"
+                        placeholder="Contact Detail (Optional)"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        required
                         country="IN"
                         defaultCountry="IN"
                         value={mobileNumber}
@@ -130,7 +144,7 @@ const EnquireForm = ({title, setOpen}) => {
                         />
                     )}
                 </div>
-                <p className='text-md mt-5'>*I give my consent for the privacy policy to apply to the processing of the provided data. I give authority to the website owner and its representatives permission to contact me via phone, text, email, or whatsapp with its offers and products. This agreement takes precedence over any DNC/NDNC registration.</p>
+                <p className='text-md mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck"/> *I give my consent for the privacy policy to apply to the processing of the provided data. I give authority to the website owner and its representatives permission to contact me via phone, text, email, or whatsapp with its offers and products. This agreement takes precedence over any DNC/NDNC registration.</p>
 
                 {formError && (
                     <p className="text-red-400 py-2.5 text-md">{formError}</p>

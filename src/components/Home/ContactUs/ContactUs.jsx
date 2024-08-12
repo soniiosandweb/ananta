@@ -16,7 +16,7 @@ const ContactUs = () => {
                         height="300"
                     ></iframe> */}
                     <p className="text-xl leading-relaxed">Invest in your future. Invest in a life of comfort, luxury, and innovation. Choose Ananta Aspire. Contact us today to schedule a visit and experience the Ananta Aspire difference.</p>
-                    <p className="text-xl leading-relaxed">Contact us at: <a className="text-brown" href="mailto:info@theanantaaspire.co.in">  <span> </span>info@theanantaaspire.co.in</a></p>
+                    <p className="text-xl leading-relaxed mt-5">Contact us at: <a className="text-brown" href="mailto:info@theanantaaspire.co.in">  <span> </span>info@theanantaaspire.co.in</a></p>
                 </div>
                 <div className="w-full md:w-1/2 p-2.5">
                     <div className="p-4 sm:p-8 rounded-35" style={{ boxShadow: "0px 3px 20px 0px rgba(0, 0, 0, 0.30196078431372547)" }}>

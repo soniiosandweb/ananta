@@ -146,7 +146,7 @@ const Header = () => {
         }}
         aria-modal="true"
       >
-        <div className="flex flex-col px-2.5">
+        <div className="flex flex-col px-2.5 popup-form">
           <div className="flex justify-end">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
