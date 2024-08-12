@@ -1,45 +1,13 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './Footer.css';
-import logo from '../../../assests/images/logo.webp';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
-    const footerLinks = [
-        {
-            name: "Privacy Policy",
-            link: "/privacy-policy"
-        },
-        {
-            name: "Terms & Conditions",
-            link: "/terms-conditions"
-        },
-    ]
-
+    
     return(
         <footer className="bg-primary-bg px-2.5 text-sm">
             <div className='max-w-8xl m-auto py-2.5'>
-                {/* <div className="flex flex-col md:flex-row items-center">
-                    <div className="w-full md:w-2/3 p-2.5 flex flex-col">
-                        <p>RERA No : PBRERA-SAS79-PR0777</p>
-                        <ul className="mt-7 flex items-center footer-links">
-                            {footerLinks.map((item, i) => (
-                                <li className="px-1.5" key={i}><NavLink to={item.link} reloadDocument={true}>{item.name}</NavLink></li>
-                            ))}
-                        </ul>
-                        <p>Copyright &copy; {new Date().getFullYear()} The Ananta Aspire. All Rights Reserved.</p>
-                    </div>
-                    <div className="w-full md:w-1/3 p-2.5 flex flex-col items-center md:items-end">
-                        <NavLink to="/" className="block w-max" reloadDocument={true}>
-                            <LazyLoadImage
-                                src={logo}
-                                alt="The Ananta Aspire"
-                                style={{width: "100px"}}
-                            />
-                        </NavLink>
-                    </div>
-                </div> */}
+                
                 <div className="flex flex-col items-center text-center gap-1.5 px-2.5 py-2.5">
-                    {/* <div className='h-px w-full bg-gray-300'></div> */}
                     <p className='text-md'><strong>We are the official Channel Partner of 'The Ananta Aspire'.  <br />
                     This website is not the official website of developer & property, it belongs to authorized channel partner and it is for the information purpose only. All rights for logo & images are reserved to developer.</strong></p>
                     <p className='text-md'>Channel Partner RERA Number : Coming Soon</p>

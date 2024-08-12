@@ -58,32 +58,32 @@ const Header = () => {
     },
   ];
 
-  const listenScrollEvent = () => {
-    if (locationValue[1] === "") {
-      if (window.scrollY > 50) {
-        setScrollClass('');
+  useEffect(() => {
+
+    const listenScrollEvent = () => {
+      if (locationValue[1] === "") {
+        if (window.scrollY > 50) {
+          setScrollClass('');
+        } else {
+          setScrollClass('scroll');
+        }
       } else {
         setScrollClass('scroll');
       }
-    } else {
-      setScrollClass('scroll');
-    }
-  };
-
-  useEffect(() => {
+    };
 
     window.addEventListener("scroll", listenScrollEvent);
 
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
-      console.log(location.hash.slice(1))
+      // console.log(location.hash.slice(1))
       if (element) {
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth'});
         // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }
     }
-  }, [location]);
+  }, [location, locationValue]);
 
 
   return (
