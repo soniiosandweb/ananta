@@ -8,7 +8,7 @@ const Footer = () => {
             <div className='max-w-8xl m-auto py-2.5'>
                 
                 <div className="flex flex-col items-center text-center gap-1.5 px-2.5 py-2.5">
-                    <p className='text-md'><strong>We are the official Channel Partner of 'The Ananta Aspire'.  <br />
+                    <p className='text-md'><strong>We are the Authorized Channel Partner of 'The Ananta Aspire'. <br />
                     This website is not the official website of developer & property, it belongs to authorized channel partner and it is for the information purpose only. <br />All rights for logo & images are reserved to developer.</strong></p>
                     <p className='text-md'>Channel Partner RERA Number : Coming Soon</p>
                     <p className='text-md text-brown font-medium'>Project RERA Number : PBRERA-SAS79-PR0777</p>

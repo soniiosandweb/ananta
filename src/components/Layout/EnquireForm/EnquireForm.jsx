@@ -9,6 +9,7 @@ const EnquireForm = ({title, setOpen}) => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [termsCheck, setTermsCheck] = useState(false);
     const [mobileNumber, setMobileNumber] = useState();
     const [phoneError, setPhoneError] = useState("");
     const [formSuccess, setFormSuccess] = useState("");
@@ -18,15 +19,19 @@ const EnquireForm = ({title, setOpen}) => {
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
 
-        if (isValidPhoneNumber(mobileNumber) === false || isPossiblePhoneNumber(mobileNumber) === false) {
-            setPhoneError("Please Enter Valid Mobile Number.");
+        if(mobileNumber){
+            if (isValidPhoneNumber(mobileNumber) === false || isPossiblePhoneNumber(mobileNumber) === false) {
+                setPhoneError("Please Enter Valid Mobile Number.");
 
-            setTimeout(() => {
-                setPhoneError('');
-            }, 5000);
+                setTimeout(() => {
+                    setPhoneError('');
+                }, 5000);
 
-            return false;
+                return false;
+            }
         }
+
+        
 
         setLoading(true);
 
@@ -75,10 +80,19 @@ const EnquireForm = ({title, setOpen}) => {
 
     }
 
+    const CheckboxChange = (e) => {
+        if(e.target.value){
+            setTermsCheck(true);
+        } else {
+            setTermsCheck(false);
+        }
+    }
+
     const resetForm = () =>{
         setName("")
         setMobileNumber('');
         setEmail('');
+        setTermsCheck(false);
     }
 
     return(
@@ -144,7 +158,7 @@ const EnquireForm = ({title, setOpen}) => {
                         />
                     )}
                 </div>
-                <p className='text-md mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck"/> *I give my consent for the privacy policy to apply to the processing of the provided data. I give authority to the website owner and its representatives permission to contact me via phone, text, email, or whatsapp with its offers and products. This agreement takes precedence over any DNC/NDNC registration.</p>
+                <p className='text-md mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} onChange={(e) => CheckboxChange(e)}/> *I give my consent for the privacy policy to apply to the processing of the provided data. I give authority to the website owner and its representatives permission to contact me via phone, text, email, or whatsapp with its offers and products. This agreement takes precedence over any DNC/NDNC registration.</p>
 
                 {formError && (
                     <p className="text-red-400 py-2.5 text-md">{formError}</p>
