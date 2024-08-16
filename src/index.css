@@ -21,7 +21,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.cookie-banner{
+  top: 76px !important;
+}
 code {
   font-family: 'Helvetica', sans-serif;
 }

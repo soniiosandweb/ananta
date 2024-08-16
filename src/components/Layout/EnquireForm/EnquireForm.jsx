@@ -38,7 +38,7 @@ const EnquireForm = ({title, setOpen}) => {
 
         axios({
             method: "post",
-            url: "https://theanantaaspire.co.in/api/enquire-us-api.php",
+            url: "https://solitairehomeconsultant.com/ananta/api/enquire-us-api.php",
             data: JSON.stringify({
                     name: name,
                     mobileNumber: mobileNumber,
@@ -151,6 +151,9 @@ const EnquireForm = ({title, setOpen}) => {
                         <p className="text-red-400 text-sm">{phoneError}</p>
                     )}
                 </div>
+
+                <p className='text-md mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</p>
+
                 <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
                     <input type="submit" value="Submit" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={loading} />
 
@@ -167,8 +170,6 @@ const EnquireForm = ({title, setOpen}) => {
                         />
                     )}
                 </div>
-                <p className='text-md mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> *I authorize to contact me via any method and consent to data use, ignoring DNC/NDNC.</p>
-
                 
             </div>
         </form>
