@@ -16,6 +16,7 @@ const EnquireForm = ({title, setOpen}) => {
     const [formSuccess, setFormSuccess] = useState("");
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [disableSubmit, setDisableSubmit] = useState(true);
 
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
@@ -32,13 +33,12 @@ const EnquireForm = ({title, setOpen}) => {
             }
         }
 
-        
-
+        setDisableSubmit(true);
         setLoading(true);
 
         axios({
             method: "post",
-            url: "https://solitairehomeconsultant.com/ananta/api/enquire-us-api.php",
+            url: "https://theanantaaspire.co.in/api/enquire-us-api.php",
             data: JSON.stringify({
                     name: name,
                     mobileNumber: mobileNumber,
@@ -81,11 +81,37 @@ const EnquireForm = ({title, setOpen}) => {
 
     }
 
+    const EmailChange = (e) => {
+       
+        setEmail(e.target.value);
+
+        if(name.length >= 1 && e.target.value.length >= 1 && termsValue === true){
+            setDisableSubmit(false);
+        } else {
+            setDisableSubmit(true);
+        }
+    }
+
+    const NameChange = (e) => {
+       
+        setName(e.target.value);
+
+        if(e.target.value.length >= 1 && email.length >= 1 && termsValue === true){
+            setDisableSubmit(false);
+        } else {
+            setDisableSubmit(true);
+        }
+    }
+
     const CheckboxChange = (e) => {
        
         setTermsValue(!termsValue); 
         setTermsCheck(!termsValue);
-        
+        if(name.length >= 1 && email.length >= 1 && !termsValue === true){
+            setDisableSubmit(false);
+        } else {
+            setDisableSubmit(true);
+        }
     }
 
     const resetForm = () =>{
@@ -113,11 +139,11 @@ const EnquireForm = ({title, setOpen}) => {
                         type="text"
                         id="name"
                         name="name"
-                        placeholder="Name"
+                        placeholder="Name *"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         required
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => NameChange(e)}
                     />
                 </div>
                 <div className="py-2">
@@ -125,11 +151,11 @@ const EnquireForm = ({title, setOpen}) => {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Email"
+                        placeholder="Email *"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         required
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => EmailChange(e)}
                     />
                 </div>
                 <div className="py-2">
@@ -152,10 +178,10 @@ const EnquireForm = ({title, setOpen}) => {
                     )}
                 </div>
 
-                <p className='text-md mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</p>
+                <p className={`text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</p>
 
                 <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
-                    <input type="submit" value="Submit" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={loading} />
+                    <input type="submit" value="Submit" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={disableSubmit} />
 
                     
                     {loading && (
