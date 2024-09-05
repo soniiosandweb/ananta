@@ -22,7 +22,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .cookie-banner{
-  top: 76px !important;
+  top: 0 !important;
+  bottom: 0;
+  left: 0 !important;
+  right: 0 !important;
+  max-width: 35%;
+  height: fit-content;
+  margin: auto;
+}
+@media(max-width: 1200px){
+  .cookie-banner{
+    max-width: 50%;
+  }
+}
+@media(max-width: 767px){
+  .cookie-banner{
+    max-width: 90%;
+  }
 }
 code {
   font-family: 'Helvetica', sans-serif;

@@ -32,3 +32,16 @@
 .popup-form .enquire-form {
     padding-top: 0;
 }
+
+
+.blink {
+    animation: vertical-shaking  1s  infinite;
+    -webkit-animation: vertical-shaking 1s  infinite;
+  }
+  @keyframes vertical-shaking {
+    0% { transform: translateY(0) }
+    25% { transform: translateY(5px) }
+    50% { transform: translateY(-5px) }
+    75% { transform: translateY(5px) }
+    100% { transform: translateY(0) }
+  }

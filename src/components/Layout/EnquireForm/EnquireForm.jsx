@@ -6,7 +6,7 @@ import axios from 'axios';
 import { CircularProgress } from '@mui/material';
 
 const EnquireForm = ({title, setOpen}) => {
-
+    const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [termsValue, setTermsValue] = useState(false);
@@ -17,6 +17,19 @@ const EnquireForm = ({title, setOpen}) => {
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
     const [disableSubmit, setDisableSubmit] = useState(true);
+    const [number, setNumber] = useState();
+
+
+
+    const checkInput = (e) =>{
+        if(!(e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode === 8)){
+            e.preventDefault()
+        }
+        else{
+            setNumber(e.target.value)
+        }
+       
+    }
 
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
@@ -50,12 +63,18 @@ const EnquireForm = ({title, setOpen}) => {
             //handle success
             if (response.data.status === 0) {
                 setLoading(false);
-                setFormSuccess("THANK YOU! Our Team Will Contact You Shortly!");
+                setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
+
+                if( setOpen){
+                   
+                    setFormVisible(false);
+                  }
                 resetForm();
                 setTimeout(() => {
                     setFormSuccess('');
                     if(setOpen){
                         setOpen(false);
+                        setFormVisible(true);
                     }
                 }, 10000);
                 
@@ -85,7 +104,7 @@ const EnquireForm = ({title, setOpen}) => {
        
         setEmail(e.target.value);
 
-        if(name.length >= 1 && e.target.value.length >= 1 && termsValue === true){
+        if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -96,7 +115,7 @@ const EnquireForm = ({title, setOpen}) => {
        
         setName(e.target.value);
 
-        if(e.target.value.length >= 1 && email.length >= 1 && termsValue === true){
+        if(e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -107,7 +126,7 @@ const EnquireForm = ({title, setOpen}) => {
        
         setTermsValue(!termsValue); 
         setTermsCheck(!termsValue);
-        if(name.length >= 1 && email.length >= 1 && !termsValue === true){
+        if(name.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -123,16 +142,16 @@ const EnquireForm = ({title, setOpen}) => {
     }
 
     return(
-        <form className="enquire-form py-6"  onSubmit={handleSubmit}>
+        <form className="enquire-form py-6" id='enquiry-form' onSubmit={handleSubmit}>
             <div className="form-section text-left">
                 {formError && (
-                    <p className="text-red-400 py-2.5 text-md">{formError}</p>
+                    <p className="text-red-400 py-2.5 text-md text-center">{formError}</p>
                 )}
 
                 {formSuccess && (
-                    <p className="text-green-700 py-2.5 text-md">{formSuccess}</p>
+                    <p className="text-green-700 py-2.5 text-md text-center">{formSuccess}</p>
                 )}
-
+  {formVisible && (<div id='enquiry-form'>
                 <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
                 <div className="py-2">
                     <input
@@ -148,27 +167,29 @@ const EnquireForm = ({title, setOpen}) => {
                 </div>
                 <div className="py-2">
                     <input
-                        type="email"
+                        type="text"
                         id="email"
                         name="email"
-                        placeholder="Email *"
+                        placeholder="Email (Optional)"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        required
+                      
                         value={email}
                         onChange={(e) => EmailChange(e)}
                     />
                 </div>
                 <div className="py-2">
-                    <PhoneInput
+                    <PhoneInput 
+                        required="true"
                         type="tel" 
                         id="mobile-number"
                         name="mobile-number"
-                        placeholder="Contact Detail (Optional)"
+                        placeholder="Contact Detail"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         country="IN"
                         defaultCountry="IN"
                         value={mobileNumber}
                         onChange={setMobileNumber}
+                        onKeyDown={(e)=> checkInput(e)}
                         limitMaxLength={true}
                         national="true"
                         international={false}
@@ -178,7 +199,7 @@ const EnquireForm = ({title, setOpen}) => {
                     )}
                 </div>
 
-                <p className={`text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</p>
+                <p className={`flex text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> <span>I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</span></p>
 
                 <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
                     <input type="submit" value="Submit" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={disableSubmit} />
@@ -196,10 +217,13 @@ const EnquireForm = ({title, setOpen}) => {
                         />
                     )}
                 </div>
-                
+                </div>
+                )}
             </div>
         </form>
     )
 }
 
 export default EnquireForm
+
+
