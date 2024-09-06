@@ -20,7 +20,7 @@ const EnquireForm = ({title, setOpen}) => {
     const [number, setNumber] = useState();
 
 
-
+    //const validateForm = () => name.length >= 1 && mobileNumber.length === 10 && termsValue;
     const checkInput = (e) =>{
         if(!(e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode === 8)){
             e.preventDefault()
@@ -99,7 +99,7 @@ const EnquireForm = ({title, setOpen}) => {
         });
 
     }
-
+   
     const EmailChange = (e) => {
        
         setEmail(e.target.value);
@@ -113,7 +113,10 @@ const EnquireForm = ({title, setOpen}) => {
 
     const NameChange = (e) => {
        
-        setName(e.target.value);
+        const value = e.target.value;
+       
+        const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
+        setName(filteredValue);
 
         if(e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
             setDisableSubmit(false);
@@ -121,7 +124,16 @@ const EnquireForm = ({title, setOpen}) => {
             setDisableSubmit(true);
         }
     }
+    // const NumberChange = (e) => {
+       
+    //     setNumber(e.target.value);
 
+    //     if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
+    //         setDisableSubmit(false);
+    //     } else {
+    //         setDisableSubmit(true);
+    //     }
+    // }
     const CheckboxChange = (e) => {
        
         setTermsValue(!termsValue); 
@@ -158,7 +170,7 @@ const EnquireForm = ({title, setOpen}) => {
                         type="text"
                         id="name"
                         name="name"
-                        placeholder="Name *"
+                        placeholder="Name*"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         required
                         value={name}
@@ -182,6 +194,7 @@ const EnquireForm = ({title, setOpen}) => {
                         required="true"
                         type="tel" 
                         id="mobile-number"
+                        // maxlength="11"
                         name="mobile-number"
                         placeholder="Contact Detail"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
@@ -199,7 +212,7 @@ const EnquireForm = ({title, setOpen}) => {
                     )}
                 </div>
 
-                <p className={`flex text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> <span>I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</span></p>
+                <p className={`flex items-center text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> <span>I agree to be contacted by 'The Ananta Aspire' and agents via WhatsApp, SMS, phone, email etc.</span></p>
 
                 <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
                     <input type="submit" value="Submit" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={disableSubmit} />
