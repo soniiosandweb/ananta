@@ -15,7 +15,7 @@ const ContactUs = () => {
                         width="100%"
                         height="300"
                     ></iframe> */}
-                    <p className="text-xl leading-relaxed">Invest in your future. Invest in a life of comfort, luxury, and innovation. Choose Ananta Aspire. Contact us today to schedule a visit and experience the Ananta Aspire difference.</p>
+                    <p className="text-xl leading-relaxed">Invest in your future. Invest in a life of comfort, luxury, and innovation. Choose <b>The Ananta Aspire flats in Zirakpur</b>. Contact us today to schedule a visit and experience <b>The Ananta Aspire</b> difference.</p>
                     <p className="text-xl leading-relaxed mt-5">Contact us at: <a className="text-brown" href="mailto:info@theanantaaspire.co.in">  <span> </span>info@theanantaaspire.co.in</a></p>
                 </div>
                 <div className="w-full md:w-1/2 p-2.5">

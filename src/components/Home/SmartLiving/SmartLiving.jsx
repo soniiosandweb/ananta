@@ -38,7 +38,7 @@ const SmartLiving = () => {
             <div className='max-w-5xl m-auto flex flex-col gap-5'>
                 <h3 className="text-3xl uppercase font-semibold mt-7">Step into Smart Living</h3>
                 <div className="w-20 h-1 bg-white m-auto"></div>
-                <p>Ananta Aspire redefines modern living not just with spacious homes and stunning amenities, but also with cutting-edge technology integrated seamlessly into your everyday life.</p>
+                <p><b>Ananta Aspire</b> redefines modern living not just with spacious homes and stunning amenities, but also with cutting-edge technology integrated seamlessly into your <b>luxury flats in Zirakpur!</b></p>
                 <div className="flex flex-wrap gap-5 lg:gap-8 justify-center p-2.5">
                     {smartLiving.map((item,i) => (
                         <div className='flex flex-col items-center p-5 bg-white text-primary-brown basis-full md:basis-1/3 lg:basis-1/4 smart-living-items group relative overflow-hidden cursor-pointer' key={i}>
