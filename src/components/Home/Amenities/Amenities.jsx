@@ -110,11 +110,11 @@ const Amenities = () => {
             <div className="w-20 h-1 bg-black m-auto"></div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-flow-row gap-3.5 md:gap-7 p-2.5">
                 {amenitiesItems.map((item, i) => (
-                    <div key={i} className='p-5 bg-primary-brown rounded-2xl text-white' style={{boxShadow : "0px 3px 20px 0px rgba(0, 0, 0, 0.30196078431372547)"}}>
+                    <div key={i} className='p-5 bg-primary-brown rounded-2xl text-white cursor-pointer aminities-group' style={{boxShadow : "0px 3px 20px 0px rgba(0, 0, 0, 0.30196078431372547)"}}>
                         <img
                             src={item.image}
                             alt={item.title}
-                            className='w-60 mx-auto mb-3.5'
+                            className='w-60 mx-auto mb-3.5 animate-wobble'
                         />
                         <h4 className='text-sm capitalize font-norms leading-snug'>{item.title}</h4>
                     </div>
