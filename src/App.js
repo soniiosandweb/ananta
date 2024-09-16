@@ -25,7 +25,7 @@ function App() {
        <p className='font-semibold text-xl mb-2'>Important</p>  'The Ananta Aspire' serves solely as a platform for online advertising services and does not facilitate sales between developers and website users. The information displayed does not guarantee that a developer or project is registered or compliant with the Real Estate (Regulation and Development) Act, 2016. Please exercise caution and independently verify all project information before making any purchase or decision.
       </CookieConsent>
 
-      <BrowserRouter basename='/anantaaspire'>
+      <BrowserRouter >
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
