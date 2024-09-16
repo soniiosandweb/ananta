@@ -110,7 +110,7 @@ const Header = () => {
           </div>
           <div className="w-3/4 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-2 sm:gap-5 px-2.5 flex-wrap ">
           
-            <NavLink to='tel:+919888877182' className="text-sm sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1 " /> +91 9888877182</NavLink>
+            <NavLink to='tel:+91 8609000900' className="text-sm sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1 " />  +91 8609000900</NavLink>
 
             <button tabIndex='-1' className="text-xs font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white" onClick={handleOpen}>Enquire Now</button>
           </div>
