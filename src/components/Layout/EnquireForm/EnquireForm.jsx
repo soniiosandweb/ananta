@@ -196,7 +196,7 @@ const EnquireForm = ({title, setOpen}) => {
                         id="mobile-number"
                         // maxlength="11"
                         name="mobile-number"
-                        placeholder="Contact Detail"
+                        placeholder="Mobile Number*"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         country="IN"
                         defaultCountry="IN"
