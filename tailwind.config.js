@@ -287,10 +287,12 @@ module.exports = {
       ],
     },
     fontSize: {
+      xxxs: ['8px', { lineHeight: '1rem' }],
       xxs: ['11px', { lineHeight: '1rem' }],
       xs: ['12px', { lineHeight: '1.2' }],
       sm: ['14px', { lineHeight: '1.7' }],
       md: ['16px', { lineHeight: '1.7' }],
+      xmd:['18px', { lineHeight: '1.7' }],
       base: ['1rem', { lineHeight: '1.5rem' }],
       lg: ['1.125rem', { lineHeight: '1.75rem' }],
       xl: ['1.25rem', { lineHeight: '1.75rem' }],

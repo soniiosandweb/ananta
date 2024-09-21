@@ -215,7 +215,7 @@ const EnquireForm = ({title, setOpen}) => {
                 <p className={`flex items-center text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> <span>I agree to be contacted by 'The Ananta Aspire' and agents via WhatsApp, SMS, phone, email etc.</span></p>
 
                 <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
-                    <input type="submit" value="Submit" className={`text-md font-semibold capitalize px-3.5 py-1.5 rounded-md text-white ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={disableSubmit} />
+                    <input type="submit" value="Download Now" className={`font-bold uppercase text-md capitalize px-3.5 py-1.5 rounded-md text-white ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={disableSubmit} />
 
                     
                     {loading && (

@@ -7,8 +7,8 @@
 }
 @keyframes pulso{
     0% {
-        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+        -moz-box-shadow: 0 0 0 0 #14be47;
+        box-shadow: 0 0 0 0 #14be47;
     }
     70% {
         -moz-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);

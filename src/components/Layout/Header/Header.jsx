@@ -111,8 +111,11 @@ const Header = () => {
             </nav>
           </div>
           <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-2 sm:gap-5 px-2.5 flex-wrap ">
-
-            <NavLink to='tel:+91 8609000900' className="text-xxs sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1 " />  +91 8609000900</NavLink>
+          <div className="rera-contact-wrapper flex flex-col">
+              <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1" /> +91 8609000900</NavLink>
+              <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-brown">PBRERA-SAS79-PR0777</NavLink>
+            </div>
+            {/* <NavLink to='tel:+91 8609000900' className="text-xxs sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1 " />  +91 8609000900</NavLink> */}
 
             <button tabIndex='-1' className="text-xxs sm:text-md font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white" onClick={handleOpen}>Enquire Now</button>
           </div>
@@ -138,7 +141,7 @@ const Header = () => {
       </header>
 
       {/* Whatsapp Button */}
-      <NavLink to='https://api.whatsapp.com/send?phone=919888877182' target="_blank" className="fixed z-20 bg-primary-lightGreen text-white text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
+      <NavLink to='https://api.whatsapp.com/send?phone=919888877182' target="_blank" className="fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center border-2 border-primary-lightGreen font-semibold overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
         <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation" />
         Whats App Now
       </NavLink>

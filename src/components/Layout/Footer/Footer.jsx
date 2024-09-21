@@ -1,11 +1,11 @@
 import './Footer.css';
 import { NavLink } from 'react-router-dom';
-
+// import IAW from 'https://iosandweb.net/' ;
 const Footer = () => {
     
     return(
         <footer className="bg-primary-bg px-2.5 text-sm">
-            <div className='max-w-8xl m-auto py-2.5'>
+            <div className='max-w-8xl m-auto pt-16 pb-2.5'>
                 
                 <div className="flex flex-col items-center text-center gap-1.5 px-2.5 py-2.5">
                     <p className='text-md'><strong>We are the Authorized Channel Partner of 'The Ananta Aspire'. <br />
@@ -18,6 +18,7 @@ const Footer = () => {
                     <p>All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Any unauthorized use or reproduction of the content may violate applicable laws.</p>
                     <p>For accurate and up-to-date information regarding services, pricing, availability, and any other details, it is recommended to contact us directly through the provided contact information on this website. Thank you for visiting our website.</p>
                     <p className='mt-1.5'><NavLink to='/terms-conditions' target='_blank' className='text-primary-brown font-semibold'>Terms & Conditions</NavLink> and <NavLink to='/privacy-policy' target='_blank' className='text-primary-brown font-semibold'>Privacy Policy</NavLink></p>
+               <p className="text-sm text">Crafted by: <a href="https://iosandweb.net/" className="hover:text-primary-brown" target="_blank" rel="noopener noreferrer">IosAndWeb Technologies</a></p>
                 </div>
             </div>
             
