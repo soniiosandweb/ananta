@@ -1,7 +1,12 @@
+
+@media (min-width:1024px) {
+    
+
 .banner-slider{
     height: 650px;
     overflow: hidden;
     position: relative;
+}
 }
 .banner-slider img{
     transition-timing-function: linear;
@@ -23,7 +28,7 @@
     height: 100%;
 }
 
-.banner-text {
+/* .banner-text {
     margin-left: 140px;
     padding-top: 0px;
 }
@@ -32,4 +37,18 @@
     .banner-text {
         margin-left: 10px;
     }
+} */
+.slide {
+    width: 100%!important;
+}
+.slick-dots{
+    bottom: 25px;
+}
+.slick-dots li button::before{
+    color: #fff;
+    font-size: 14px;
+}
+.slick-dots .slick-active button::before{
+    opacity: 1;
+    color: #fff !important;
 }

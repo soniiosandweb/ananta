@@ -16,7 +16,7 @@ const EnquireForm = ({title, setOpen}) => {
     const [formSuccess, setFormSuccess] = useState("");
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [disableSubmit, setDisableSubmit] = useState(true);
+    // const [disableSubmit, setDisableSubmit] = useState(true);
     const [number, setNumber] = useState();
 
 
@@ -46,7 +46,7 @@ const EnquireForm = ({title, setOpen}) => {
             }
         }
 
-        setDisableSubmit(true);
+        // setDisableSubmit(true);
         setLoading(true);
 
         axios({
@@ -104,11 +104,11 @@ const EnquireForm = ({title, setOpen}) => {
        
         setEmail(e.target.value);
 
-        if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
-            setDisableSubmit(false);
-        } else {
-            setDisableSubmit(true);
-        }
+        // if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
+        //     setDisableSubmit(false);
+        // } else {
+        //     setDisableSubmit(true);
+        // }
     }
 
     const NameChange = (e) => {
@@ -118,11 +118,11 @@ const EnquireForm = ({title, setOpen}) => {
         const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
         setName(filteredValue);
 
-        if(e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
-            setDisableSubmit(false);
-        } else {
-            setDisableSubmit(true);
-        }
+        // if(e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
+        //     setDisableSubmit(false);
+        // } else {
+        //     setDisableSubmit(true);
+        // }
     }
     // const NumberChange = (e) => {
        
@@ -138,11 +138,11 @@ const EnquireForm = ({title, setOpen}) => {
        
         setTermsValue(!termsValue); 
         setTermsCheck(!termsValue);
-        if(name.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
-            setDisableSubmit(false);
-        } else {
-            setDisableSubmit(true);
-        }
+        // if(name.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
+        //     setDisableSubmit(false);
+        // } else {
+        //     setDisableSubmit(true);
+        // }
     }
 
     const resetForm = () =>{
@@ -215,7 +215,7 @@ const EnquireForm = ({title, setOpen}) => {
                 <p className={`flex items-center text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> <span>I agree to be contacted by 'The Ananta Aspire' and agents via WhatsApp, SMS, phone, email etc.</span></p>
 
                 <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
-                    <input type="submit" value="Download Now" className={`font-bold uppercase text-md capitalize px-3.5 py-1.5 rounded-md text-white ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-brown cursor-pointer'}`} disabled={disableSubmit} />
+                    <input type="submit" value="Download Now" className={`font-bold uppercase text-sm  py-3.5 px-9 rounded-md text-primary-brown  bg-white border-2 border-primary-brown hover:bg-primary-brown hover:text-white cursor-pointer`}  />
 
                     
                     {loading && (

@@ -8,11 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHomeLg } from '@fortawesome/free-solid-svg-icons';
 
 const BannerSlider = () => {
-
   const settings = {
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
-    dots: false,
+    dots: true,
     infinite: true,
     arrows: false,
     speed: 500,
@@ -24,46 +23,50 @@ const BannerSlider = () => {
   };
 
   const slides = [
-    {
-      image: banner1,
-    },
-    {
-      image: banner2,
-    },
-    {
-      image: banner3,
-    },
-    {
-      image: banner4,
-    },
+    { image: banner1 },
+    { image: banner2 },
+    { image: banner3 },
+    { image: banner4 },
   ];
 
   return (
-    <section className="banner-slider-section relative">
+
+    <section className="overflow-hidden ">
       <Slider {...settings}>
         {slides.map((el, i) => (
-          <div className="w-full h-screen	 banner-slider" key={i}>
-            <img src={el.image} alt="Banner" className="object-cover object-center h-full w-full" />
+          <div className='w-full content-center h-screen relative overflow-hidden' key={i}>
+            <img src={el.image} alt="Banner" className="object-cover object-center absolute top-0 left-0 right-0 h-full w-full" />
+            <div className='max-w-6xl mr-auto ml-0 flex absolute top-0 left-0 right-0 h-full w-full banner-slider text-white px-2.5 py-3 z-10'>
+              <div className="flex flex-col w-full h-full items-center ">
+                <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
+                  <div className='flex   h-full flex-col gap-4 text-left'>
+                    <h1 className='text-2xl sm:text-3xl md:text-5xl font-semibold'>Where Luxury Meets Innovation</h1>
+                    <h2 className='text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
+
+                    <div className='w-72 h-px bg-white mt-16'></div>
+                    <ul className='flex flex-col lg:flex-row gap-4'>
+                      <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHomeLg} /> 3 BHK Apartments</li>
+                      <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHomeLg} /> 3+1 BHK Apartments</li>
+                      <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHomeLg} /> 4+1 BHK Apartments</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <LazyLoadImage
+                          src={el.image}
+                          alt={el.alt}
+                          className="w-full object-cover object-center absolute top-0 h-full banner-slider-bg"
+                          style={{ zIndex: "-1" }}
+                      /> */}
+            <div className='w-full absolute top-0 h-full' style={{ backgroundColor: "#00000080" }}></div>
+            <p className='text-xs font-semibold p-1 absolute mx-auto bottom-0.5 right-3 text-white w-max'>*Image shown is for illustration purposes only</p>
           </div>
         ))}
       </Slider>
-      
-      <div className='max-w-5xl banner-text m-auto flex flex-row absolute top-0 left-0 right-0 h-full w-full text-left z-10  items-center justify-left gap-5 text-white px-2.5 pt-12 pb-2.5'>
-        <div className="wrap">
-        <h1 className='text-3xl md:text-5xl font-semibold'>Where Luxury Meets Innovation - Unveiling a Life Beyond Ordinary</h1>
-        <h2 className='text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design and Exclusive Amenities</h2>
-        <div className='h-12'></div>
-        <div className='w-72 border-b border-white'></div>
-        <ul className='flex gap-4 md:gap-7 flex-wrap justify-left items-left'>
-          <li className='text-sm flex gap-2 items-center'><FontAwesomeIcon icon={faHomeLg} /> <span>3 BHK Apartments</span></li>
-          <li className='text-sm flex gap-2 items-center'><FontAwesomeIcon icon={faHomeLg} /> <span>3+1 BHK Apartments</span></li>
-          <li className='text-sm flex gap-2 items-center'><FontAwesomeIcon icon={faHomeLg} /> <span>4+1 BHK Apartments</span></li>
-        </ul>
-        </div>
-      </div>
-      <p className='text-xs sm:text-sm font-semibold p-1 absolute mx-auto bottom-5 right-0 left-0 text-white w-max'>*Image shown is for illustration purposes only</p>
     </section>
-  );
+  )
+ 
 };
 
-export default BannerSlider;
+export default BannerSlider

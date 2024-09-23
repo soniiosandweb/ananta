@@ -1,6 +1,6 @@
 import './Footer.css';
 import { NavLink } from 'react-router-dom';
-// import IAW from 'https://iosandweb.net/' ;
+
 const Footer = () => {
     
     return(
@@ -18,7 +18,7 @@ const Footer = () => {
                     <p>All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Any unauthorized use or reproduction of the content may violate applicable laws.</p>
                     <p>For accurate and up-to-date information regarding services, pricing, availability, and any other details, it is recommended to contact us directly through the provided contact information on this website. Thank you for visiting our website.</p>
                     <p className='mt-1.5'><NavLink to='/terms-conditions' target='_blank' className='text-primary-brown font-semibold'>Terms & Conditions</NavLink> and <NavLink to='/privacy-policy' target='_blank' className='text-primary-brown font-semibold'>Privacy Policy</NavLink></p>
-               <p className="text-sm text">Crafted by: <a href="https://iosandweb.net/" className="hover:text-primary-brown" target="_blank" rel="noopener noreferrer">IosAndWeb Technologies</a></p>
+                    <p className='mt-1.5 text-xs'>Crafted By: <NavLink to='https://iosandweb.net/' target='_blank' className='hover:text-primary-brown'>IosAndWeb Technologies</NavLink></p>
                 </div>
             </div>
             
