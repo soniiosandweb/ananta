@@ -15,49 +15,58 @@ const Header = () => {
   const locationValue = pathname.split("/");
 
   const [scrollClass, setScrollClass] = useState('scroll');
-
+  const [showsidePopup, setshowsidePopup] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const [locationPath, setLocationPath] = useState(false);
+
+
   const menuLinks = [
     {
       name: "About Us",
-      redirect: "/#about-us",
+      redirect: "/about-us",
       id: "about-us",
     },
     {
       name: "Floor Plan",
-      redirect: "/#floor-plan",
+      redirect: "/floor-plan",
       id: "floor-plan",
     },
     {
       name: "Smart Living",
-      redirect: "/#smart-living",
+      redirect: "/smart-living",
       id: "smart-living",
     },
     {
       name: "Amenities",
-      redirect: "/#amenities",
+      redirect: "/amenities",
       id: "amenities",
     },
     {
       name: "Connectivity",
-      redirect: "/#connectivity",
+      redirect: "/connectivity",
       id: "connectivity",
     },
     {
       name: "Gallery",
-      redirect: "/#gallery",
+      redirect: "/gallery",
       id: "gallery",
     },
     {
       name: "Contact Us",
-      redirect: "/#contact-us",
+      redirect: "/contact-us",
       id: "contact-us",
     },
   ];
+
+  const newSidePopUpClose = (e) => {
+    e.preventDefault();
+    setshowsidePopup(false)
+  }
+
 
   useEffect(() => {
 
@@ -84,8 +93,30 @@ const Header = () => {
         // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }
     }
-  }, [location, locationValue]);
+    if (location.hash && location.hash.slice(1) !== locationPath) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setLocationPath(location.hash.slice(1))
+        element.style.scrollMarginTop = '50px';
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    if (menuLinks.some(item => item.id === location.pathname.split("/")[1]) && location.pathname.split("/")[1] !== locationPath) {
+      const path = location.pathname.split("/")[1];
+      const element = document.getElementById(path);
 
+      if (element) {
+        setLocationPath(path)
+        element.style.scrollMarginTop = '50px';
+        element.scrollIntoView({ behavior: 'smooth' });
+
+      }
+    }
+  }, [location, locationValue, locationPath]);
+
+  useEffect(() => {
+    setTimeout(() => setshowsidePopup(true), 5000);
+  }, [])
 
   return (
     <>
@@ -110,14 +141,15 @@ const Header = () => {
               ))}
             </nav>
           </div>
-          <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-2 sm:gap-5 px-2.5 flex-wrap ">
-          <div className="rera-contact-wrapper flex flex-col">
+          <div className="w-5/6 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1 gap-y-2.5 sm:gap-x-4 px-0 xsm:px-1.5 sm:px-2.5 flex-wrap ">
+            <div className="rera-contact-wrapper flex gap-2 flex-row">
               <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1" /> +91 8609000900</NavLink>
-              <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-brown">PBRERA-SAS79-PR0777</NavLink>
+              {/* <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-brown">PBRERA-SAS79-PR0777</NavLink> */}
+            
+            <button tabIndex='-1' className="text-xxs sm:text-xs font-semibold capitalize cursor-pointer bg-primary-brown py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 rounded-md text-white" onClick={handleOpen}>Enquire Now</button>
             </div>
-            {/* <NavLink to='tel:+91 8609000900' className="text-xxs sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1 " />  +91 8609000900</NavLink> */}
 
-            <button tabIndex='-1' className="text-xxs sm:text-md font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white" onClick={handleOpen}>Enquire Now</button>
+            <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-brown">PBRERA-SAS79-PR0777</NavLink>
           </div>
           <button className="lg:hidden p-2 text-primary-brown" onClick={toggleMobileMenu}>
             <FontAwesomeIcon icon={faBars} />
@@ -141,10 +173,10 @@ const Header = () => {
       </header>
 
       {/* Whatsapp Button */}
-      <NavLink to='https://api.whatsapp.com/send?phone=919888877182' target="_blank" className="fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center border-2 border-primary-lightGreen font-semibold overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
+      {/* <NavLink to='https://api.whatsapp.com/send?phone=919888877182' target="_blank" className="fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center border-2 border-primary-lightGreen font-semibold overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
         <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation" />
         Whats App Now
-      </NavLink>
+      </NavLink> */}
 
       {/* Download Brochure Button */}
       <div className='sticky h-0 z-20' style={{ top: "45%" }}><button tabIndex='-1' className="w-max text-xs font-semibold capitalize cursor-pointer bg-primary-brown p-2 sm:p-2.5 rounded-md text-white absolute -rotate-90 download-broucher-btn" style={{ right: "-46px" }} onClick={handleOpen}>Download Brochure</button>
@@ -173,9 +205,15 @@ const Header = () => {
           <div className="flex justify-end">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
-          <EnquireForm title="Request For Brochure" setOpen={setOpen} />
+          <EnquireForm title="Request For Brochure" button="Submit Now" setOpen={setOpen} />
         </div>
       </Dialog>
+      <div className={` side-popup-form ${showsidePopup ? 'flex' : 'hidden'} border-4 border-primary-brown `}>
+        <div className="flex justify-end btn-icon">
+          <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
+        </div>
+        <EnquireForm title="Request For Brochure" button="Submit Now" />
+      </div>
     </>
   );
 };
