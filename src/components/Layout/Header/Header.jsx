@@ -6,7 +6,7 @@ import { Dialog } from "@mui/material";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+// import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import EnquireForm from '../EnquireForm/EnquireForm';
 
 const Header = () => {
@@ -27,18 +27,18 @@ const Header = () => {
   const menuLinks = [
     {
       name: "About Us",
-      redirect: "/about-us",
-      id: "about-us",
+      redirect: "/aboutus",
+      id: "aboutus",
     },
     {
       name: "Floor Plan",
-      redirect: "/floor-plan",
-      id: "floor-plan",
+      redirect: "/floorplan",
+      id: "floorplan",
     },
     {
       name: "Smart Living",
-      redirect: "/smart-living",
-      id: "smart-living",
+      redirect: "/smartliving",
+      id: "smartliving",
     },
     {
       name: "Amenities",
@@ -57,42 +57,43 @@ const Header = () => {
     },
     {
       name: "Contact Us",
-      redirect: "/contact-us",
-      id: "contact-us",
+      redirect: "/contact",
+      id: "contact",
     },
   ];
+
+  // handle menu click
+  const handleMenuClick = (e) => {
+    e.preventDefault();
+    const { id } = e.target.dataset;
+console.log(id,'click')
+    const element = document.getElementById(id);
+    if (element) {
+      element.style.scrollMarginTop = '50px';
+      element.scrollIntoView({ behavior: 'smooth' });
+
+    }
+
+  }
 
   const newSidePopUpClose = (e) => {
     e.preventDefault();
     setshowsidePopup(false)
   }
 
-
   useEffect(() => {
-
     const listenScrollEvent = () => {
-      if (locationValue[1] === "") {
-        if (window.scrollY > 50) {
-          setScrollClass('');
-        } else {
-          setScrollClass('scroll');
-        }
+      if (locationValue[1] === "" ||  menuLinks.some(item => item.id === locationValue[1])) {
+        const newScrollClass = window.scrollY > 50 ? '' : 'scroll';
+        setScrollClass(newScrollClass);
       } else {
         setScrollClass('scroll');
       }
     };
 
+
     window.addEventListener("scroll", listenScrollEvent);
 
-    if (location.hash) {
-      const element = document.getElementById(location.hash.slice(1));
-      // console.log(location.hash.slice(1))
-      if (element) {
-        element.style.scrollMarginTop = '50px';
-        element.scrollIntoView({ behavior: 'smooth' });
-        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
-      }
-    }
     if (location.hash && location.hash.slice(1) !== locationPath) {
       const element = document.getElementById(location.hash.slice(1));
       if (element) {
@@ -101,18 +102,23 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    if (menuLinks.some(item => item.id === location.pathname.split("/")[1]) && location.pathname.split("/")[1] !== locationPath) {
+    // console.log(location.pathname.split("/"))
+
+    if(menuLinks.some(item => item.id === location.pathname.split("/")[1]) && location.pathname.split("/")[1] !== locationPath){
       const path = location.pathname.split("/")[1];
+      console.log(path);
       const element = document.getElementById(path);
 
       if (element) {
         setLocationPath(path)
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth' });
-
+        
       }
     }
-  }, [location, locationValue, locationPath]);
+
+
+  },[location, locationValue, locationPath]);
 
   useEffect(() => {
     setTimeout(() => setshowsidePopup(true), 5000);
@@ -121,7 +127,7 @@ const Header = () => {
   return (
     <>
       {/* Header */}
-      <header className={`bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ? 'sticky home-header' : 'sticky'}`}>
+      <header className={`bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ||  menuLinks.some(item => item.id === locationValue[1]) ? 'sticky home-header' : 'sticky'}`}>
         <div className="px-0 sm:px-5 py-2.5 flex items-center">
           <div className="w-1/4 lg:w-1/6 xl:w-1/4 px-2.5">
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
@@ -134,19 +140,26 @@ const Header = () => {
             </NavLink>
           </div>
           <div className="hidden lg:block w-3/6 xl:w-2/4 px-2.5">
+            <div className='flex gap-1.5 xl:gap-[14px] items-center justify-center flex-wrap'>
+              {locationValue[1] === "" ?
 
-            <nav className="flex gap-5 items-center justify-center flex-wrap">
-              {menuLinks.map((item, i) => (
-                <Link smooth="true" to={item.redirect} key={i} className="text-sm font-medium hover:text-primary-brown header-nav-link" >{item.name}</Link>
-              ))}
-            </nav>
+                menuLinks.map((item, i) => (
+                  <Link smooth="true" to={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-brown header-nav-link" data-id={item.id} onClick={(e) => handleMenuClick(e)}>{item.name}</Link>
+                ))
+                :
+                menuLinks.map((item, i) => (
+                  <Link smooth="true" to={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-brown header-nav-link" >{item.name}</Link>
+                ))
+
+              }
+            </div>
           </div>
           <div className="w-5/6 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1 gap-y-2.5 sm:gap-x-4 px-0 xsm:px-1.5 sm:px-2.5 flex-wrap ">
             <div className="rera-contact-wrapper flex gap-2 flex-row">
               <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1" /> +91 8609000900</NavLink>
               {/* <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-brown">PBRERA-SAS79-PR0777</NavLink> */}
-            
-            <button tabIndex='-1' className="text-xxs sm:text-xs font-semibold capitalize cursor-pointer bg-primary-brown py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 rounded-md text-white" onClick={handleOpen}>Enquire Now</button>
+
+              <button tabIndex='-1' className="text-xxs sm:text-xs font-semibold capitalize cursor-pointer bg-primary-brown py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 rounded-md text-white" onClick={handleOpen}>Enquire Now</button>
             </div>
 
             <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-brown">PBRERA-SAS79-PR0777</NavLink>

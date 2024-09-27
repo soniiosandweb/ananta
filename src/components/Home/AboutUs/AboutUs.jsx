@@ -1,6 +1,6 @@
 const AboutUs = () => {
     return(
-        <section className="max-w-5xl m-auto pt-16 px-2.5 text-center flex flex-col gap-5" id="about-us">
+        <section className="max-w-5xl m-auto pt-16 px-2.5 text-center flex flex-col gap-5" id="aboutus">
             <h3 className="text-3xl uppercase font-semibold text-primary-brown">About Us</h3>
             <div className="w-20 h-1 bg-black m-auto"></div>
             <p>Discover <b>The Ananta Aspire</b>, a luxury residential project in Zirakpur that combines luxury with modern innovation. Spread across 34,050 square yards, our development features 440 exclusive <b>Luxury residential apartments for sale in Zirakpur!</b></p>

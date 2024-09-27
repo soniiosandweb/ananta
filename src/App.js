@@ -4,13 +4,13 @@ import Home from './components/Home/Home';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './components/TermsConditions/TermsConditions';
 import PageNotFound from './components/Layout/PageNotFound';
-import CookieConsent from "react-cookie-consent";
-import { ContactPage } from '@mui/icons-material';
+// import CookieConsent from "react-cookie-consent";
 import FloorPlanPage from './components/FloorPlan/floorPlan';
 import SmartLivingPage from './components/SmartLiving/SmartLiving';
 import ConnectivityPage from './components/Connectivity/connectivity';
 import GalleryPage from './components/Gallery/gallery';
 import ContactUsPage from './components/ContactUs/ContactUs';
+import AmenityPage from './components/Amenities/Amenities';
 
 function App() {
 
@@ -39,20 +39,20 @@ function App() {
             <Route path='/terms-conditions' element={<TermsConditions />} />
             <Route path='*' element={<PageNotFound />} />
 
-            <Route path='/about-us' element={<Home />} />
-            <Route path='/floor-plan' element={<Home />} />
-            <Route path='/smart-living' element={<Home />} />
+            <Route path='/aboutus' element={<Home />} />
+            <Route path='/floorplan' element={<Home />} />
+            <Route path='/smartliving' element={<Home />} />
             <Route path='/amenities' element={<Home />} />
             <Route path='/connectivity' element={<Home />} />
             <Route path='/gallery' element={<Home />} />
-            <Route path='/contact-us' element={<Home />} />
+            <Route path='/contact' element={<Home />} />
           
-            <Route path='/floorPlan' element={<FloorPlanPage />} />
-            <Route path='/smartLiving' element={<SmartLivingPage />} />
+            <Route path='/floor-plan' element={<FloorPlanPage />} />
+            <Route path='/smart-living' element={<SmartLivingPage />} />
             <Route path='/connectivities' element={<ConnectivityPage />} />
             <Route path='/galleries' element={<GalleryPage />} />
-            <Route path='/contact' element={<ContactUsPage />} />
-        
+            <Route path='/contactus' element={<ContactUsPage />} />
+        <Route path='amenity' element={<AmenityPage/>}/>
 
           </Route>
         </Routes>

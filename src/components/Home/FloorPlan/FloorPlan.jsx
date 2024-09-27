@@ -11,7 +11,7 @@ const FloorPlan = () => {
     const [openPlan3, setOpenPlan3] = useState(false);
 
     return(
-        <section className="max-w-5xl m-auto pt-16 pb-5 px-2.5 text-center flex flex-col gap-5" id="floor-plan">
+        <section className="max-w-5xl m-auto pt-16 pb-5 px-2.5 text-center flex flex-col gap-5" id="floorplan">
             <h3 className="text-3xl uppercase font-semibold text-primary-brown">Floor Plan</h3>
             <div className="w-20 h-1 bg-black m-auto"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 p-2.5">

@@ -17,19 +17,19 @@ const EnquireForm = ({title, setOpen, button}) => {
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
     // const [disableSubmit, setDisableSubmit] = useState(true);
-    const [number, setNumber] = useState();
+    // const [number, setNumber] = useState();
 
 
     //const validateForm = () => name.length >= 1 && mobileNumber.length === 10 && termsValue;
-    const checkInput = (e) =>{
-        if(!(e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode === 8)){
-            e.preventDefault()
-        }
-        else{
-            setNumber(e.target.value)
-        }
+    // const checkInput = (e) =>{
+    //     if(!(e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode === 8)){
+    //         e.preventDefault()
+    //     }
+    //     else{
+    //         setNumber(e.target.value)
+    //     }
        
-    }
+    // }
 
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
@@ -191,7 +191,7 @@ const EnquireForm = ({title, setOpen, button}) => {
                 </div>
                 <div className="py-2">
                     <PhoneInput 
-                        required="true"
+                        required
                         type="tel" 
                         id="mobile-number"
                         // maxlength="11"
@@ -202,7 +202,6 @@ const EnquireForm = ({title, setOpen, button}) => {
                         defaultCountry="IN"
                         value={mobileNumber}
                         onChange={setMobileNumber}
-                        onKeyDown={(e)=> checkInput(e)}
                         limitMaxLength={true}
                         national="true"
                         international={false}

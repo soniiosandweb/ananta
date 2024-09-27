@@ -34,7 +34,7 @@ const SmartLiving = () => {
     ]
 
     return(
-        <section className="max-w-8xl m-auto py-12 px-2.5 text-center flex flex-col gap-5 mt-5 text-white relative" id="smart-living">
+        <section className="max-w-8xl m-auto py-12 px-2.5 text-center flex flex-col gap-5 mt-5 text-white relative" id="smartliving">
             <div className='max-w-5xl m-auto flex flex-col gap-5'>
                 <h3 className="text-3xl uppercase font-semibold mt-7">Step into Smart Living</h3>
                 <div className="w-20 h-1 bg-white m-auto"></div>
