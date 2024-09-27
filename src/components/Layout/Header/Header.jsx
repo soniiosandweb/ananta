@@ -110,7 +110,7 @@ console.log(id,'click')
       const element = document.getElementById(path);
 
       if (element) {
-        setLocationPath(path)
+        // setLocationPath(path)
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth' });
         
@@ -119,10 +119,16 @@ console.log(id,'click')
 
 
   },[location, locationValue, locationPath]);
-
   useEffect(() => {
-    setTimeout(() => setshowsidePopup(true), 5000);
-  }, [])
+    const timer = setTimeout(() => {
+      setshowsidePopup(true);
+    }, 5000); 
+
+  
+    // return () => clearTimeout(timer);
+  }, []);
+ 
+  
 
   return (
     <>
