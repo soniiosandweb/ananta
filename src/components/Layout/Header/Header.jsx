@@ -139,7 +139,7 @@ console.log(id,'click')
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
                 src={logo}
-                alt="The Ananta Aspire"
+                alt="The Ananta Aspire Logo"
                 style={{ width: "100px" }}
                 className='header-logo'
               />
@@ -231,7 +231,7 @@ console.log(id,'click')
         <div className="flex justify-end btn-icon">
           <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
         </div>
-        <EnquireForm title="Request For Brochure" button="Submit Now" />
+        <EnquireForm title="Ananta Aspire Price List" button="Get New Price List" />
       </div>
     </>
   );

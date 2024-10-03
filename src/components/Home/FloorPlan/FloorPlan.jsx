@@ -19,7 +19,7 @@ const FloorPlan = () => {
                 <div className="p-3.5 border-primary-brown border-2 rounded-tl-3xl rounded-br-3xl flex flex-col gap-5 items-center justify-between">
                     <img
                         src={floorPlan1}
-                        alt="3 BHK 1830 Sq. feet"
+                        alt="Floor Plan for 3 BHK"
                         className="p-2.5 cursor-pointer"
                         onClick={() => setOpenPlan1(true)}
                     />
@@ -44,7 +44,7 @@ const FloorPlan = () => {
                 <div className="p-3.5 border-primary-brown border-2 rounded-tl-3xl rounded-br-3xl flex flex-col gap-5 items-center justify-between">
                     <img
                         src={floorPlan2}
-                        alt="3+1 BHK- 2245 sq feet"
+                        alt="Floor Plan for 3+1 BHK"
                         className="p-2.5 cursor-pointer"
                         onClick={() => setOpenPlan2(true)}
                     />
@@ -69,7 +69,7 @@ const FloorPlan = () => {
                 <div className="p-3.5 border-primary-brown border-2 rounded-tl-3xl rounded-br-3xl flex flex-col gap-5 items-center justify-between">
                     <img
                         src={floorPlan3}
-                        alt="4+1 BHK (2900 sq feet)"
+                        alt="Floor Plan for 4+1 BHK"
                         className="p-2.5 cursor-pointer"
                         onClick={() => setOpenPlan3(true)}
                     />

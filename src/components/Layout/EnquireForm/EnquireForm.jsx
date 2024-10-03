@@ -51,7 +51,7 @@ const EnquireForm = ({title, setOpen, button}) => {
 
         axios({
             method: "post",
-            url: "https://theanantaaspire.co.in/api/enquire-us-api.php",
+            url: "https://anantaaspirezirakpur.co/api/enquire-us-api.php",
             data: JSON.stringify({
                     name: name,
                     mobileNumber: mobileNumber,
@@ -157,11 +157,11 @@ const EnquireForm = ({title, setOpen, button}) => {
         <form className="enquire-form py-6" id='enquiry-form' onSubmit={handleSubmit}>
             <div className="form-section text-left">
                 {formError && (
-                    <p className="text-red-400 py-2.5 text-md text-center">{formError}</p>
+                    <p className="text-red-400 py-2  text-[12px] text-center">{formError}</p>
                 )}
 
                 {formSuccess && (
-                    <p className="text-green-700 py-2.5 text-md text-center">{formSuccess}</p>
+                    <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
                 )}
   {formVisible && (<div id='enquiry-form'>
                 <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>

@@ -30,74 +30,74 @@ const Gallery = () => {
     const images = [
         {
             src: image1,
-            title: "Gallery Image 1",
+            title: "Overview of the society",
             rows: 2,
             cols: 2,
         },
         {
             src: image2,
-            title: "Gallery Image 2",
+            title: "Common garden overlooking the Ananta society",
         },
         {
             src: image3,
-            title: "Gallery Image 3",
+            title: "Overview of the society from the main road outsideGallery Image 3",
             rows: 2,
         },
         {
             src: image4,
-            title: "Gallery Image 4",
+            title: "People enjoying walking on the pavements inside the societyGallery Image 4",
         },
         {
             src: image5,
-            title: "Gallery Image 5",
+            title: "Bird's eye view of the society",
             rows: 2,
         },
         {
             src: image6,
-            title: "Gallery Image 6",
+            title: "The parking area",
             rows: 2,
             cols: 2,
         },
         {
             src: image7,
-            title: "Gallery Image 7",
+            title: "side view of the exterior of the apartements",
         },
         {
             src: image8,
-            title: "Gallery Image 8",
+            title: "people having a peaceful time in the middle of the garden overlooking the apartments",
             
         },
         {
             src: image9,
-            title: "Gallery Image 9",
+            title: "playarea for children",
         },
         {
             src: image10,
-            title: "Gallery Image 10",
+            title: "the living area of the club house",
             rows: 2,
         },
         {
             src: image11,
-            title: "Gallery Image 11",
+            title: "the conference room",
             rows: 2,
             cols: 2,
         },
         {
             src: image12,
-            title: "Gallery Image 12",
+            title: "club house with the view of the Coffee Club",
         },
         {
             src: image13,
-            title: "Gallery Image 13",
+            title: "a woman looking at the apartments in awe",
           
         },
         {
             src: image14,
-            title: "Gallery Image 14",
+            title: "the view of swimming pool at night with lights",
         },
         {
             src: image15,
-            title: "Gallery Image 15",
+            title: "bird's eye view of the Ananta Apartments",
             cols: 2,
         },
     ]

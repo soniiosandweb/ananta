@@ -13,8 +13,10 @@ const Home = () => {
     return(
         <>
             <MetaData 
-                title="The Ananta Aspire"
-                description="Find affordable luxury apartments at Ananta Aspire Zirakhpur. Explore our ready-to-move-in 1, 2, 3, and 4BHK flats. Get sample flat photos and prices."
+                title={"The Ananta Aspire: Your Dream Home Awaits in Zirakpur"} 
+                description={"Explore luxurious 3 & 4 BHK flats in Zirakpur at The Ananta Aspire. Discover modern amenities, stunning designs, and a prime location. Schedule a visit today! "} 
+                keywords={"The Ananta Aspire, 3 BHK Flats in Zirakpur,4 BHK Flats in Zirakpur, Luxury Apartments in Zirakpur,Zirakpur Real Estate, Flats for Sale in Zirakpur, Ananta Aspire Zirakpur, Modern Apartments Zirakpur"}
+                
             />
 
             <BannerSlider />

@@ -9,7 +9,7 @@ import { faHomeLg } from '@fortawesome/free-solid-svg-icons';
 
 const BannerSlider = () => {
   const settings = {
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 5000,
     dots: true,
     infinite: true,
@@ -35,7 +35,7 @@ const BannerSlider = () => {
       <Slider {...settings}>
         {slides.map((el, i) => (
           <div className='w-full content-center h-screen relative overflow-hidden' key={i}>
-            <img src={el.image} alt="Banner" className="object-cover object-center absolute top-0 left-0 right-0 h-full w-full" />
+            <img src={el.image} alt="The Ananta Aspire - Luxurious Apartments in Zirakpur" className="object-cover object-center absolute top-0 left-0 right-0 h-full w-full" />
             <div className='max-w-6xl mr-auto ml-0 flex absolute top-0 left-0 right-0 h-full w-full banner-slider text-white px-2.5 py-3 z-10'>
               <div className="flex flex-col w-full h-full items-center ">
                 <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
