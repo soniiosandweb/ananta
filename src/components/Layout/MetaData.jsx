@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet"
 
-const MetaData = ({title, description}) => {
+const MetaData = ({title, description, canonicalUrl}) => {
     return(
         <Helmet>
             <title>{title}</title>
@@ -10,6 +10,10 @@ const MetaData = ({title, description}) => {
                     content={description}
                 /> 
             )}
+
+            {canonicalUrl &&
+                <link rel="canonical" href={canonicalUrl ? canonicalUrl : process.env.REACT_APP_API_URL } />
+            }
             
         </Helmet>
     )

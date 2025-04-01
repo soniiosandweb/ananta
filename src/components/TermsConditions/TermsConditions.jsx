@@ -1,11 +1,17 @@
+import { useLocation } from "react-router-dom";
 import MetaData from "../Layout/MetaData"
 
 const TermsConsitions = () => {
+
+    const location = useLocation();
+
     return (
         <>
             <MetaData title={"The Ananta Aspire | Terms & Conditions"}
                 description={"Review our Terms & Conditions before exploring The Ananta Aspire's luxurious 3 & 4 BHK flats in Zirakpur. Understand the framework for using our website and services."}
-                keywords={"The Ananta Aspire, terms and conditions, user agreement, website usage, legal disclaimers, Zirakpur, 3 BHK flats, 4 BHK flats, luxury apartments"} />
+                keywords={"The Ananta Aspire, terms and conditions, user agreement, website usage, legal disclaimers, Zirakpur, 3 BHK flats, 4 BHK flats, luxury apartments"} 
+                canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
+            />
                 
 
             <section className="max-w-5xl m-auto py-14 px-2.5 text-left flex flex-col gap-5">

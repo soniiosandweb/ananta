@@ -123,6 +123,7 @@ console.log(id,'click')
     const timer = setTimeout(() => {
       setshowsidePopup(true);
     }, 5000); 
+    console.log(timer)
 
   
     // return () => clearTimeout(timer);

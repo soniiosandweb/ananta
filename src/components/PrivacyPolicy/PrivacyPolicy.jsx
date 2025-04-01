@@ -1,11 +1,17 @@
+import { useLocation } from "react-router-dom";
 import MetaData from "../Layout/MetaData"
 
 const PrivacyPolicy = () => {
+
+    const location = useLocation();
+
     return (
         <>
             <MetaData title={"The Ananta Aspire | Privacy Policy - Protecting Your Information"}
                 description={"At The Ananta Aspire, we value your privacy. Learn how we collect, use, and protect your personal information."}
-                keywords={"The Ananta Aspire, privacy policy, data protection, personal information, data security, Zirakpur"} />
+                keywords={"The Ananta Aspire, privacy policy, data protection, personal information, data security, Zirakpur"} 
+                canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
+            />
 
             <section className="max-w-5xl m-auto py-14 px-2.5 text-left flex flex-col gap-5">
                 <h3 className="text-3xl uppercase font-semibold text-primary-brown pt-1 text-center">Privacy Policy</h3>
