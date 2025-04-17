@@ -1,21 +1,31 @@
-
 @media (min-width:1024px) {
-    
 
-.banner-slider{
-    height: 650px;
-    overflow: hidden;
-    position: relative;
+    h1.banner-title {
+        font-size: 35px;
+        line-height: 1.2;
+    }
+
+    h2.banner-sub-title {
+        font-size: 25px;
+    }
+
+    .banner-slider {
+        height: 650px;
+        overflow: hidden;
+        position: relative;
+    }
 }
-}
-.banner-slider img{
+
+.banner-slider img {
     transition-timing-function: linear;
     transition-duration: 20s;
     transform: scale(1);
 }
-.slick-active .banner-slider img{
+
+.slick-active .banner-slider img {
     transform: scale(1.2);
 }
+
 .banner-slider-section .banner-slider::before {
     content: "";
     top: 0;
@@ -39,16 +49,109 @@
     }
 } */
 .slide {
-    width: 100%!important;
+    width: 100% !important;
 }
-.slick-dots{
+
+.slick-dots {
     bottom: 25px;
 }
-.slick-dots li button::before{
+
+.slick-dots li button::before {
     color: #fff;
     font-size: 14px;
 }
-.slick-dots .slick-active button::before{
+
+.slick-dots .slick-active button::before {
     opacity: 1;
     color: #fff !important;
+}
+
+/*  */
+
+.possession {
+    width: 647px;
+    padding: 5px;
+    background-color: #e43031;
+    color: #fff;
+    text-align: center;
+    transform: rotate(-35deg) translate(-28%, -35%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    font-size: 35px;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.possesion-container {
+
+    width: 350px;
+    height: 350px;
+    /* overflow: hidden; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    /* &:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 5px;
+        background-color: #e43031;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        height: 10px;
+        width: 5px;
+        background-color: #e43031;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    } */
+}
+
+header {
+    z-index: 9999;
+}
+
+header.scrolled.sticky.home-header {
+    z-index: 99999999;
+}
+
+@media (max-width:1600px) {
+    .possession {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width:1250px) {
+    .possession {
+        width: 520px;
+        font-size: 18px;
+    }
+
+    .possesion-container {
+        width: 245px;
+        height: 245px;
+    }
+}
+
+@media (max-width:1085px) {
+    .possession {
+        width: 472px;
+        font-size: 14px;
+        transform: rotate(-38deg) translate(-30%, -30%);
+    }
+}
+
+@media (max-width:950px) {
+    .possession {
+       display: none;
+    }
 }

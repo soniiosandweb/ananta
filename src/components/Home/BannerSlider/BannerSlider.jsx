@@ -32,6 +32,7 @@ const BannerSlider = () => {
   return (
 
     <section className="overflow-hidden ">
+     <div className="possesion-container">  <div className='possession'>Ready <span>For</span> Possession</div></div>
       <Slider {...settings}>
         {slides.map((el, i) => (
           <div className='w-full content-center h-screen relative overflow-hidden' key={i}>
@@ -40,10 +41,10 @@ const BannerSlider = () => {
               <div className="flex flex-col w-full h-full items-center ">
                 <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
                   <div className='flex   h-full flex-col gap-4 text-left'>
-                    <h1 className='text-2xl sm:text-3xl md:text-5xl font-semibold'>Where Luxury Meets Innovation</h1>
-                    <h2 className='text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
-
-                    <div className='w-72 h-px bg-white mt-16'></div>
+                    <h1 className='banner-title text-2xl sm:text-3xl md:text-5xl font-semibold'>Where Luxury Meets Innovation</h1>
+                    <h2 className='banner-sub-title text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
+{/*  */}
+                    <div className='w-72 h-px bg-white mt-8  '></div>
                     <ul className='flex flex-col lg:flex-row gap-4'>
                       <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHomeLg} /> 3 BHK Apartments</li>
                       <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHomeLg} /> 3+1 BHK Apartments</li>
