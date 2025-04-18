@@ -31,16 +31,16 @@ const BannerSlider = () => {
 
   return (
 
-    <section className="overflow-hidden ">
+    <section className="overflow-hidden banner-section">
      <div className="possesion-container">  <div className='possession'>Ready <span>For</span> Possession</div></div>
       <Slider {...settings}>
         {slides.map((el, i) => (
-          <div className='w-full content-center h-screen relative overflow-hidden' key={i}>
+          <div className='banner-wrapper w-full content-center h-screen relative overflow-hidden' key={i}>
             <img src={el.image} alt="The Ananta Aspire - Luxurious Apartments in Zirakpur" className="object-cover object-center absolute top-0 left-0 right-0 h-full w-full" />
             <div className='max-w-6xl mr-auto ml-0 flex absolute top-0 left-0 right-0 h-full w-full banner-slider text-white px-2.5 py-3 z-10'>
               <div className="flex flex-col w-full h-full items-center ">
                 <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
-                  <div className='flex   h-full flex-col gap-4 text-left'>
+                  <div className='flex   h-full flex-col gap-4 text-left banner-wrapper'>
                     <h1 className='banner-title text-2xl sm:text-3xl md:text-5xl font-semibold'>Where Luxury Meets Innovation</h1>
                     <h2 className='banner-sub-title text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
 {/*  */}

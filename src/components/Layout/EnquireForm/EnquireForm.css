@@ -5,9 +5,24 @@
 /* .PhoneInputCountry {
     display: none !important;
 } */
-
+.side-popup-form form.enquire-form .form-section #enquiry-form {
+    justify-content: flex-start;
+}
 input.align-middle.size-4{
     scale: 1.5;
      margin-right: 12px;
  }
  
+ .check {
+    border-radius: 50%;
+    font-size: 15px;
+    height: 24px;
+    padding: 4px;
+    width: 24px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+span.thanku-txt {
+    font-size: 25px;
+}

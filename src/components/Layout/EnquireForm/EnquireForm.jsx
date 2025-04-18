@@ -1,11 +1,13 @@
 import './EnquireForm.css';
 import 'react-phone-number-input/style.css';
-import PhoneInput, {isPossiblePhoneNumber, isValidPhoneNumber} from "react-phone-number-input";
+import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber } from "react-phone-number-input";
 import { useState } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const EnquireForm = ({title, setOpen, button}) => {
+const EnquireForm = ({ title, setOpen, button }) => {
     const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -28,13 +30,13 @@ const EnquireForm = ({title, setOpen, button}) => {
     //     else{
     //         setNumber(e.target.value)
     //     }
-       
+
     // }
 
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
 
-        if(mobileNumber){
+        if (mobileNumber) {
             if (isValidPhoneNumber(mobileNumber) === false || isPossiblePhoneNumber(mobileNumber) === false) {
                 setPhoneError("Please Enter Valid Mobile Number.");
 
@@ -53,55 +55,62 @@ const EnquireForm = ({title, setOpen, button}) => {
             method: "post",
             url: "https://anantaaspirezirakpur.co/api/enquire-us-api.php",
             data: JSON.stringify({
-                    name: name,
-                    mobileNumber: mobileNumber,
-                    email: email,
-                }),
+                name: name,
+                mobileNumber: mobileNumber,
+                email: email,
+            }),
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
         })
-        .then(function (response) {
-            //handle success
-            if (response.data.status === 0) {
-                setLoading(false);
-                setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
+            .then(function (response) {
+                //handle success
+                if (response.data.status === 0) {
+                    setLoading(false);
+                    setFormSuccess(
+                        <>
+                            <span className='thanku-txt'>THANK YOU </span>
+                            <div>
+                                <span> For Trusting Us with Your Home Search!!</span> 
+                                <span>We’ll Reach Out Soon With All the Details.</span> 
+                            </div>
+                        </>
+                    );
+                    // if( setOpen){
 
-                if( setOpen){
-                   
-                    setFormVisible(false);
-                  }
-                resetForm();
-                setTimeout(() => {
-                    setFormSuccess('');
-                    if(setOpen){
-                        setOpen(false);
-                        setFormVisible(true);
-                    }
-                }, 10000);
-                
-            } else {
+                    //     setFormVisible(false);
+                    //   }
+                    resetForm();
+                    // setTimeout(() => {
+                    //     setFormSuccess('');
+                    //     if(setOpen){
+                    //         setOpen(false);
+                    //         setFormVisible(true);
+                    //     }
+                    // }, 10000);
+
+                } else {
+                    setLoading(false);
+                    setFormError("Some error occured");
+                    resetForm();
+                    setTimeout(() => {
+                        setFormError('');
+                    }, 10000);
+                }
+            })
+            .catch(function (response) {
+                //handle error
                 setLoading(false);
+                console.log(response);
                 setFormError("Some error occured");
                 resetForm();
                 setTimeout(() => {
                     setFormError('');
                 }, 10000);
-            }
-        })
-        .catch(function (response) {
-            //handle error
-            setLoading(false);
-            console.log(response);
-            setFormError("Some error occured");
-            resetForm();
-            setTimeout(() => {
-                setFormError('');
-            }, 10000);
-        });
+            });
 
     }
-   
+
     const EmailChange = (e) => {
-       
+
         setEmail(e.target.value);
 
         // if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
@@ -112,9 +121,9 @@ const EnquireForm = ({title, setOpen, button}) => {
     }
 
     const NameChange = (e) => {
-       
+
         const value = e.target.value;
-       
+
         const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
         setName(filteredValue);
 
@@ -125,7 +134,7 @@ const EnquireForm = ({title, setOpen, button}) => {
         // }
     }
     // const NumberChange = (e) => {
-       
+
     //     setNumber(e.target.value);
 
     //     if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
@@ -135,8 +144,8 @@ const EnquireForm = ({title, setOpen, button}) => {
     //     }
     // }
     const CheckboxChange = (e) => {
-       
-        setTermsValue(!termsValue); 
+
+        setTermsValue(!termsValue);
         setTermsCheck(!termsValue);
         // if(name.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
         //     setDisableSubmit(false);
@@ -145,15 +154,15 @@ const EnquireForm = ({title, setOpen, button}) => {
         // }
     }
 
-    const resetForm = () =>{
+    const resetForm = () => {
         setName("")
         setMobileNumber('');
         setEmail('');
-        setTermsValue(false); 
+        setTermsValue(false);
         setTermsCheck(false);
     }
 
-    return(
+    return (
         <form className="enquire-form py-6" id='enquiry-form' onSubmit={handleSubmit}>
             <div className="form-section text-left">
                 {formError && (
@@ -161,74 +170,77 @@ const EnquireForm = ({title, setOpen, button}) => {
                 )}
 
                 {formSuccess && (
-                    <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
+                    <p className="success-wrapper text-green-700 py-2 text-[15px] gap-2 text-center flex flex-col items-center justify-center">
+                        <div className="text-white bg-primary-brown check"> <FontAwesomeIcon icon={faCheck} /></div>
+                        <span className='flex flex-col gap-2 flex flex-col success-text'>{formSuccess}</span>
+                    </p>
                 )}
-  {formVisible && (<div id='enquiry-form'>
-                <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
-                <div className="py-2">
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name*"
-                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        required
-                        value={name}
-                        onChange={(e) => NameChange(e)}
-                    />
-                </div>
-                <div className="py-2">
-                    <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="Email (Optional)"
-                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                      
-                        value={email}
-                        onChange={(e) => EmailChange(e)}
-                    />
-                </div>
-                <div className="py-2">
-                    <PhoneInput 
-                        required
-                        type="tel" 
-                        id="mobile-number"
-                        // maxlength="11"
-                        name="mobile-number"
-                        placeholder="Mobile Number*"
-                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        country="IN"
-                        defaultCountry="IN"
-                        value={mobileNumber}
-                        onChange={setMobileNumber}
-                        limitMaxLength={true}
-                        national="true"
-                        international={false}
-                    />
-                    {phoneError && (
-                        <p className="text-red-400 text-sm">{phoneError}</p>
-                    )}
-                </div>
-
-                <p className={`flex items-center text-[10px] mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> <span>I agree to be contacted by 'The Ananta Aspire' and agents via WhatsApp, SMS, phone, email etc.</span></p>
-
-                <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
-                    <input type="submit" value={button ? button : 'Download Now'} className={`font-bold uppercase text-xs  py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 rounded-md text-primary-brown  bg-white border-2 border-primary-brown hover:bg-primary-brown hover:text-white cursor-pointer`}  />
-
-                    
-                    {loading && (
-                        <CircularProgress
-                            sx={{
-                            color: (theme) =>
-                                theme.palette.grey[theme.palette.mode === 'dark' ? 400 : 800],
-                            }}
-                            size={35}
-                            thickness={4}
-                            value={100}
+                {formVisible && (<div className='gap-2' id='enquiry-form'>
+                    <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
+                    <div className="py-2">
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Name*"
+                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                            required
+                            value={name}
+                            onChange={(e) => NameChange(e)}
                         />
-                    )}
-                </div>
+                    </div>
+                    <div className="py-2">
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            placeholder="Email (Optional)"
+                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+
+                            value={email}
+                            onChange={(e) => EmailChange(e)}
+                        />
+                    </div>
+                    <div className="py-2">
+                        <PhoneInput
+                            required
+                            type="tel"
+                            id="mobile-number"
+                            // maxlength="11"
+                            name="mobile-number"
+                            placeholder="Mobile Number*"
+                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                            country="IN"
+                            defaultCountry="IN"
+                            value={mobileNumber}
+                            onChange={setMobileNumber}
+                            limitMaxLength={true}
+                            national="true"
+                            international={false}
+                        />
+                        {phoneError && (
+                            <p className="text-red-400 text-sm">{phoneError}</p>
+                        )}
+                    </div>
+
+                    <p className={`flex items-center text-[10px] mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> <span>I agree to be contacted by 'The Ananta Aspire' and agents via WhatsApp, SMS, phone, email etc.</span></p>
+
+                    <div className="mt-2.5 text-center flex items-center gap-5 justify-center">
+                        <input type="submit" value={button ? button : 'Download Now'} className={`font-bold uppercase text-xs  py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 rounded-md text-primary-brown  bg-white border-2 border-primary-brown hover:bg-primary-brown hover:text-white cursor-pointer`} />
+
+
+                        {loading && (
+                            <CircularProgress
+                                sx={{
+                                    color: (theme) =>
+                                        theme.palette.grey[theme.palette.mode === 'dark' ? 400 : 800],
+                                }}
+                                size={35}
+                                thickness={4}
+                                value={100}
+                            />
+                        )}
+                    </div>
                 </div>
                 )}
             </div>

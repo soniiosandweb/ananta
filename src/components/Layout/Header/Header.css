@@ -75,12 +75,13 @@
     height: fit-content;
     right: 30px;
     transform: translateY(-40%);
-    top: 50%;
+    top: 44%;
     z-index: 100;
     max-width: 25%;
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 5px 2px #00000029;
+    z-index: 99999999;
 }
 
 .side-popup-form .btn-icon {
@@ -97,11 +98,11 @@
     justify-content: center;
 }
 
-@media (min-width:1600px) {
+/* @media (min-width:1600px) {
     .side-popup-form {
         min-height: 550px;
     }
-}
+} */
 
 @media(max-width: 1200px) {
     .side-popup-form {
@@ -223,9 +224,7 @@
         padding: 7px;
     }
 
-    .blink {
-        font-size: 9px;
-    }
+   
 
      /* .possession {
         left: 24%;

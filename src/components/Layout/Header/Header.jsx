@@ -164,7 +164,7 @@ console.log(id,'click')
           </div>
           <div className="pre-rera w-5/6 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1 gap-y-2.5 sm:gap-x-4 px-0 xsm:px-1.5 sm:px-2.5 flex-wrap ">
             <div className="rera-contact-wrapper flex gap-2 flex-row">
-              <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1" /> +91 8609000900</NavLink>
+              <NavLink to='tel:+919888877182' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-brown pr-1" /> +91 9888877182</NavLink>
               {/* <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-brown">PBRERA-SAS79-PR0777</NavLink> */}
 
               <button tabIndex='-1' className="text-xxs sm:text-xs font-semibold capitalize cursor-pointer bg-primary-brown py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 rounded-md text-white enquire-btn" onClick={handleOpen}>Enquire Now</button>
