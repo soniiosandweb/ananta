@@ -207,14 +207,16 @@ console.log(id,'click')
       <Dialog
         open={open}
         onClose={handleClose}
-        className="form_popup"
+        className="form_popup same"
         aria-hidden="false"
         sx={{
           "& .MuiDialog-container": {
             "& .MuiPaper-root": {
               width: "100%",
               maxWidth: "450px",
-              borderRadius: "30px",
+              borderRadius: "0px",
+              borderColor:'#8f6445',
+              // border: '4px solid #8f6445',
               backgroundColor: "#f7f7f7",
               padding: "15px",
             },
@@ -222,8 +224,8 @@ console.log(id,'click')
         }}
         aria-modal="true"
       >
-        <div className="flex flex-col px-2.5 popup-form">
-          <div className="flex justify-end">
+        <div className="flex flex-col px-2.5 popup-form ">
+          <div className="flex justify-end btn-icon">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
           <EnquireForm title="Request For Brochure" button="Submit Now" setOpen={setOpen} />

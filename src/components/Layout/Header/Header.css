@@ -155,3 +155,7 @@
     }
 }
 
+.MuiDialog-root.form_popup {
+    z-index: 99999999;
+}
+
