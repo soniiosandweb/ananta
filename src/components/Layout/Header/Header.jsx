@@ -219,6 +219,7 @@ console.log(id,'click')
               // border: '4px solid #8f6445',
               backgroundColor: "#f7f7f7",
               padding: "15px",
+              boxShadow: '0px 0px 4px 0px #0000001A'
             },
           },
         }}
