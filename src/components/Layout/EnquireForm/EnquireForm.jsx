@@ -68,7 +68,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
                     setFormSuccess(
                         <>
                             <span className='thanku-txt'>THANK YOU </span>
-                            <div>
+                            <div className='flex flex-col'>
                                 <span> For Trusting Us with Your Home Search!!</span> 
                                 <span>We’ll Reach Out Soon With All the Details.</span> 
                             </div>
@@ -79,13 +79,13 @@ const EnquireForm = ({ title, setOpen, button }) => {
                     //     setFormVisible(false);
                     //   }
                     resetForm();
-                    // setTimeout(() => {
-                    //     setFormSuccess('');
-                    //     if(setOpen){
-                    //         setOpen(false);
-                    //         setFormVisible(true);
-                    //     }
-                    // }, 10000);
+                    setTimeout(() => {
+                        setFormSuccess('');
+                        if(setOpen){
+                            setOpen(false);
+                            setFormVisible(true);
+                        }
+                    }, 10000);
 
                 } else {
                     setLoading(false);
@@ -164,7 +164,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
 
     return (
         <form className="enquire-form py-6" id='enquiry-form' onSubmit={handleSubmit}>
-            <div className="form-section text-left">
+             <div className={`form-section text-left ${formSuccess ? 'form-success' : ''}`}>
                 {formError && (
                     <p className="text-red-400 py-2  text-[12px] text-center">{formError}</p>
                 )}

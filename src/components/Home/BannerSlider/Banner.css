@@ -1,19 +1,19 @@
 @media (min-width:1024px) {
 
-    h1.banner-title {
+    /* h1.banner-title {
         font-size: 35px;
         line-height: 1.2;
     }
 
     h2.banner-sub-title {
         font-size: 25px;
-    }
+    } */
 
-    .banner-slider {
+    /* .banner-slider {
         height: 650px;
         overflow: hidden;
         position: relative;
-    }
+    } */
 }
 
 .banner-slider img {
@@ -101,16 +101,16 @@ header.scrolled.sticky.home-header {
     }
 }
 
-@media (max-width:1250px) {
+@media (max-width:1120px) {
     .possession {
-        top: -18px;
-        left: -36px;
+        top: -21px;
+        left: -38px;
         font-size: 18px;
-        padding: 2px;
+        /* padding: 2px; */
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
     .possession {
         top: -29px;
         left: -54px;
@@ -139,20 +139,24 @@ header.scrolled.sticky.home-header {
         top: -18px;
         left: -34px;
         font-size: 10px;
-        padding: 3px;
+        /* padding: 3px; */
         width: 430px;
     }
 }
-@media (max-width:345px) {
+@media (max-width:340px) {
     .possession {
-        top: -27px;
-        left: -40px;
+        top: -25px;
+        left: -38px;
         font-size: 10px;
-        padding: 2px;
+        padding: 3px;
         width: 430px;
     }
     }
-
+    /* @media (max-width:340px){
+    .possession {
+        top: -25px;
+        left: -38px;
+    }} */
 
 .h-screen {
     height: 100vh;
