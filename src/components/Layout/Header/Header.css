@@ -143,8 +143,6 @@
         padding: 7px;
     }
 
-   
-
 }
 
 
@@ -158,4 +156,5 @@
 .MuiDialog-root.form_popup {
     z-index: 99999999;
 }
+
 
