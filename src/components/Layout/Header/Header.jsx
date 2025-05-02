@@ -152,7 +152,7 @@ console.log(id,'click')
               {locationValue[1] === "" ?
 
                 menuLinks.map((item, i) => (
-                  <Link smooth="true" to={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-brown header-nav-link f" data-id={item.id} onClick={(e) => handleMenuClick(e)}>{item.name}</Link>
+                  <Link smooth="true" to={item.redirect} key={i} className="text-xs xl:text-[14px] font-medium hover:text-primary-brown header-nav-link f" data-id={item.id} onClick={(e) => handleMenuClick(e)}>{item.name}</Link>
                 ))
                 :
                 menuLinks.map((item, i) => (

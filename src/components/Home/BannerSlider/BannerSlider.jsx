@@ -4,7 +4,7 @@ import banner1 from "../../../assests/images/slider/banner1.jpeg";
 import banner2 from "../../../assests/images/slider/banner2.jpeg";
 import banner3 from "../../../assests/images/slider/banner3.jpeg";
 import banner4 from "../../../assests/images/slider/banner4.jpeg";
-import Possession from "../../../assests/images/possessionRibbon.png"
+import Possession from "../../../assests/images/ribbon-img.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHomeLg } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
@@ -70,7 +70,7 @@ const BannerSlider = () => {
                 <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
                   <div className='flex h-full flex-col gap-4 text-left banner-wrapper'>
                     <div className="possession-txt gap-4 flex  flex-col justify-center w-fit">
-                    <div className='w-max flex '>  <img src={Possession} alt="" className='w-[280px] sm:w-[380px] md:[490px] lg:w-[593px] ' /></div>
+                    <div className='w-max flex '>  <img src={Possession} alt="" className='w-[280px] sm:w-[380px] md:[490px] lg:w-[527px] ' /></div>
 
                       <h1 className='banner-title text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'>Where Luxury Meets Innovation</h1></div>
                     <h2 className='banner-sub-title text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
