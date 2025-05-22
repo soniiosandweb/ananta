@@ -16,8 +16,14 @@
     } */
 }
 
-.possession-txt{
+.possession-txt {
     align-items: center;
+}
+
+@media (max-width:345px) {
+    .possession-txt {
+        align-items: flex-start;
+    }
 }
 
 h1.banner-title.w-fit {
@@ -179,4 +185,21 @@ header.scrolled.sticky.home-header {
 
 .BannerScrolled .possession {
     display: none;
+}
+
+.luxary {
+    width: fit-content !important;
+    line-height: 1.2 !important;
+    padding: 6px 5px 7px;
+}
+
+.banner-title,
+.banner-sub-title {
+    line-height: 1.2 !important;
+}
+
+@media (max-width:767px) {
+    .luxary {
+        padding: 3px 5px 5px;
+    }
 }
