@@ -190,7 +190,7 @@ header.scrolled.sticky.home-header {
 .luxary {
     width: fit-content !important;
     line-height: 1.2 !important;
-    padding: 6px 5px 7px;
+    padding: 6px 10px 7px;
 }
 
 .banner-title,
@@ -200,6 +200,6 @@ header.scrolled.sticky.home-header {
 
 @media (max-width:767px) {
     .luxary {
-        padding: 3px 5px 5px;
+        padding: 3px 7px 5px;
     }
 }

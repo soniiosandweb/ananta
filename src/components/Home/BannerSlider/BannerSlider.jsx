@@ -74,16 +74,16 @@ const BannerSlider = () => {
 
                       <h1 className='banner-title  text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'>Where Luxury Meets Innovation</h1></div>
                     <h2 className='banner-sub-title  text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
-                    <p className=' text-[14px] sm:text-[16px] md:text-[26px] font-semibold bg-[#FF0500]  w-fit luxary'>Luxury flats starting at just ₹1.5 Cr.</p>
+                    <p className=' text-[14px] sm:text-[16px] md:text-[20px] font-medium bg-[#FF0500]  w-fit luxary'>Luxury flats starting at just ₹1.5 Cr.</p>
                     <div className='w-72 h-px bg-white mt-8'></div>
                     <ul className='flex flex-col lg:flex-row gap-4'>
-                      <li className='flex gap-2 items-center text-sm font-semibold'>
+                      <li className='flex gap-2 items-center text-sm font-medium'>
                         <FontAwesomeIcon icon={faHomeLg} /> 3 BHK Apartments
                       </li>
-                      <li className='flex gap-2 items-center text-sm font-semibold'>
+                      <li className='flex gap-2 items-center text-sm font-medium'>
                         <FontAwesomeIcon icon={faHomeLg} /> 3+1 BHK Apartments
                       </li>
-                      <li className='flex gap-2 items-center text-sm font-semibold'>
+                      <li className='flex gap-2 items-center text-sm font-medium'>
                         <FontAwesomeIcon icon={faHomeLg} /> 4+1 BHK Apartments
                       </li>
                     </ul>
