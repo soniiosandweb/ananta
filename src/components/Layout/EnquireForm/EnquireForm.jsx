@@ -240,6 +240,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
                                 value={100}
                             />
                         )}
+                      
                     </div>
                 </div>
                 )}

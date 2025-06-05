@@ -13,8 +13,8 @@ const Home = () => {
     return(
         <>
             <MetaData 
-                title={"Luxury 3 & 4 BHK Apartments for Sale in Zirakpur | The Ananta Aspire"} 
-                description={"Discover premium residential apartments for sale in Zirakpur at The Ananta Aspire. Explore 3 & 4 BHK luxury flats for sale, including options near Chandigarh Airport, all with world-class amenities!"} 
+                title={"Ananta Aspire | Buy 3&4bhk luxury apartments in Zirakpur"} 
+                description={"Discover 3 & 4BHK luxury apartments at Ananta Aspire, Zirakpur—where comfort meets elegance. Modern living spaces designed for your lifestyle.."} 
                 keywords={"The Ananta Aspire, 3 BHK Flats in Zirakpur,4 BHK Flats in Zirakpur, Luxury Apartments in Zirakpur,Zirakpur Real Estate, Flats for Sale in Zirakpur, Ananta Aspire Zirakpur, Modern Apartments Zirakpur"}
                 canonicalUrl={process.env.REACT_APP_API_URL}
             />

@@ -46,10 +46,44 @@ const BannerSlider = () => {
   };
 
   const slides = [
-    { image: banner1 },
-    { image: banner2 },
-    { image: banner3 },
-    { image: banner4 },
+    {
+      image: banner1,
+      title: "Ananta Aspire is Where Luxury Meets Innovation",
+      subtitle: (
+        <>
+          Luxury 3 & 4 BHK Apartments for Sale in Zirakpur
+        </>
+      ),
+    },
+    {
+      image: banner2,
+      title: "Smart Living Begins at The Ananta Aspire",
+      subtitle: (
+        <>
+          Combining modern technology and premium comfort in Zirakpur’s most exclusive address.
+        </>
+      ),
+    },
+    {
+      image: banner3,
+      title: "Make The Ananta Aspire Your Gateway to Premium Living",
+      subtitle: (
+        <>
+          440 exclusive luxury residences with integrated smart home features and unmatched comfort.
+
+        </>
+      ),
+    },
+    {
+      image: banner4,
+      title: "Live Smarter, Live Better with the Ananta Aspire",
+      subtitle: (
+        <>
+          Explore luxury 3 & 4 BHK apartments for sale in Zirakpur, enriched with voice-controlled smart home features.
+
+        </>
+      ),
+    },
   ];
 
   return (
@@ -72,9 +106,10 @@ const BannerSlider = () => {
                     <div className="possession-txt gap-4 lg:gap-[26px] flex  flex-col justify-center w-fit">
                       <div className='w-max flex '>  <img src={Possession} alt="" className='w-[280px] sm:w-[380px] md:w-[449px] ' /></div>
 
-                      <h1 className='banner-title  text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'>Where Luxury Meets Innovation</h1></div>
-                    <h2 className='banner-sub-title  text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
-                    <p className=' text-[14px] sm:text-[16px] md:text-[20px] font-medium bg-[#FF0500]  w-fit luxary'>Luxury flats starting at just ₹1.5 Cr.</p>
+                      <h1 className='banner-title  text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'> {el.title}</h1></div>
+                    <h2 className='banner-sub-title  text-lg sm:text-xl md:text-3xl font-medium'>{el.subtitle}
+                    </h2>
+                    <p className=' text-[14px] sm:text-[16px] md:text-[20px] font-medium bg-[#FF0500]  w-fit luxary'>Luxury flats starting at just ₹ 1.5 Cr.</p>
                     <div className='w-72 h-px bg-white mt-8'></div>
                     <ul className='flex flex-col lg:flex-row gap-4'>
                       <li className='flex gap-2 items-center text-sm font-medium'>
