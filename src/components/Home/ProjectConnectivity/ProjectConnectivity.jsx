@@ -117,12 +117,12 @@ const ProjectConnectivity = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-flow-row gap-5 p-2.5">
                 {/* Accessibility */}
                 <div className="flex flex-col py-2.5 gap-5 items-center md:items-start">
-                    <h5 className="text-2xl text-primary-brown font-semibold">Accessibility</h5>
+                    <h4 className="text-2xl text-primary-brown font-semibold">Accessibility</h4>
                     {accessibility.map((item,i) => (
                         <div className="flex flex-col md:flex-row gap-3.5" key={i}>
                             <FontAwesomeIcon icon={item.icon} style={{fontSize: "30px"}}/>
                             <div className="text-center md:text-left text-sm">
-                                <h6 className="font-bold text-primary-brown">{item.title}</h6>
+                                <p className="font-bold text-primary-brown leading-[1] mb-1">{item.title}</p>
                                 <p>{item.min}</p>
                             </div>
                         </div>
@@ -131,12 +131,12 @@ const ProjectConnectivity = () => {
 
                 {/* Hospitals */}
                 <div className="flex flex-col py-2.5 gap-5 items-center md:items-start">
-                    <h5 className="text-2xl text-primary-brown font-semibold">Hospitals</h5>
+                    <h4 className="text-2xl text-primary-brown font-semibold">Hospitals</h4>
                     {hospitals.map((item,i) => (
                         <div className="flex flex-col md:flex-row gap-3.5" key={i}>
                             <FontAwesomeIcon icon={item.icon} style={{fontSize: "30px"}}/>
                             <div className="text-center md:text-left text-sm">
-                                <h6 className="font-bold text-primary-brown">{item.title}</h6>
+                                <p className="font-bold text-primary-brown leading-[1] mb-1">{item.title}</p>
                                 <p>{item.min}</p>
                             </div>
                         </div>
@@ -145,12 +145,12 @@ const ProjectConnectivity = () => {
 
                 {/* Education */}
                 <div className="flex flex-col py-2.5 gap-5 items-center md:items-start">
-                    <h5 className="text-2xl text-primary-brown font-semibold">Education</h5>
+                    <h4 className="text-2xl text-primary-brown font-semibold">Education</h4>
                     {education.map((item,i) => (
                         <div className="flex flex-col md:flex-row gap-3.5" key={i}>
                             <FontAwesomeIcon icon={item.icon} style={{fontSize: "30px"}}/>
                             <div className="text-center md:text-left text-sm">
-                                <h6 className="font-bold text-primary-brown">{item.title}</h6>
+                                <p className="font-bold text-primary-brown leading-[1] mb-1">{item.title}</p>
                                 <p>{item.min}</p>
                             </div>
                         </div>
@@ -159,12 +159,12 @@ const ProjectConnectivity = () => {
 
                 {/* Hotel / Entertainment */}
                 <div className="flex flex-col py-2.5 gap-5 items-center md:items-start">
-                    <h5 className="text-2xl text-primary-brown font-semibold">Hotel/Entertainment</h5>
+                    <h4 className="text-2xl text-primary-brown font-semibold">Hotel/Entertainment</h4>
                     {hotel.map((item,i) => (
                         <div className="flex flex-col md:flex-row gap-3.5" key={i}>
                             <FontAwesomeIcon icon={item.icon} style={{fontSize: "30px"}}/>
                             <div className="text-center md:text-left text-sm">
-                                <h6 className="font-bold text-primary-brown">{item.title}</h6>
+                                <p className="font-bold text-primary-brown leading-[1] mb-1">{item.title}</p>
                                 <p>{item.min}</p>
                             </div>
                         </div>

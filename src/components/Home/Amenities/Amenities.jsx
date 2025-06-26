@@ -116,7 +116,7 @@ const Amenities = () => {
                             alt={item.title}
                             className='w-60 mx-auto mb-3.5 animate-wobble'
                         />
-                        <h4 className='text-sm capitalize font-norms leading-snug'>{item.title}</h4>
+                        <p className='text-sm capitalize font-norms leading-snug mb-0'>{item.title}</p>
                     </div>
                 ))}
             </div>

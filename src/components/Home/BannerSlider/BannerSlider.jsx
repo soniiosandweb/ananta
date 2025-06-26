@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 
 const BannerSlider = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   // Detect scroll position and add/remove class
   useEffect(() => {
@@ -35,7 +36,7 @@ const BannerSlider = () => {
     autoplay: false,
     autoplaySpeed: 50000,
     dots: true,
-    infinite: false,
+    infinite: true,
     arrows: false,
     speed: 500,
     slidesToShow: 1,
@@ -43,6 +44,7 @@ const BannerSlider = () => {
     draggable: false,
     pauseOnHover: false,
     lazyLoad: "progressive",
+    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex),
   };
 
   const slides = [
@@ -105,8 +107,8 @@ const BannerSlider = () => {
                   <div className='flex h-full flex-col gap-4 lg:gap-[26px] text-left banner-wrapper'>
                     <div className="possession-txt gap-4 lg:gap-[26px] flex  flex-col justify-center w-fit">
                       <div className='w-max flex '>  <img src={Possession} alt="" className='w-[280px] sm:w-[380px] md:w-[449px] ' /></div>
-
-                      <h1 className='banner-title  text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'> {el.title}</h1></div>
+                      {activeSlide === i ? <h1 className='banner-title  text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'> {el.title}</h1> : <h2 className='banner-title  text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'> {el.title}</h2>}
+                    </div>
                     <h2 className='banner-sub-title  text-lg sm:text-xl md:text-3xl font-medium'>{el.subtitle}
                     </h2>
                     <p className=' text-[14px] sm:text-[16px] md:text-[20px] font-medium bg-[#FF0500]  w-fit luxary'>Luxury flats starting at just ₹ 1.5 Cr.</p>

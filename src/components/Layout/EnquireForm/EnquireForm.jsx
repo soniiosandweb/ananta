@@ -176,7 +176,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
                     </p>
                 )}
                 {formVisible && (<div className='gap-2' id='enquiry-form'>
-                    <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
+                    <h5 className="text-2xl font-semibold capitalize mb-2.5">{title}</h5>
                     <div className="py-2">
                         <input
                             type="text"
