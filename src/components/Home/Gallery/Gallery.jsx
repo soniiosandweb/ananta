@@ -14,6 +14,7 @@ import image12 from '../../../assests/images/gallery/image-12.jpeg';
 import image13 from '../../../assests/images/gallery/image-13.jpeg';
 import image14 from '../../../assests/images/gallery/image-14.jpeg';
 import image15 from '../../../assests/images/gallery/image-15.jpeg';
+// import image16 from '../../../assests/images/gallery/image-16.jpg';
 import Lightbox from 'yet-another-react-lightbox';
 import { useState } from 'react';
 import { Counter, Fullscreen, Zoom } from 'yet-another-react-lightbox/plugins';
@@ -95,11 +96,19 @@ const Gallery = () => {
             src: image14,
             title: "the view of swimming pool at night with lights",
         },
+        // {
+        //     src: image16,
+        //     title: "front view of the Ananta Apartments",
+        //     cols: 2,
+        //     rows:2
+        // },
         {
             src: image15,
             title: "bird's eye view of the Ananta Apartments",
             cols: 2,
+            // rows: 1
         },
+        
     ]
     function srcset(image, size, rows = 1, cols = 1) {
         return {

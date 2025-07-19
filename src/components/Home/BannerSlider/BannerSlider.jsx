@@ -4,6 +4,7 @@ import banner1 from "../../../assests/images/slider/banner1.jpeg";
 import banner2 from "../../../assests/images/slider/banner2.jpeg";
 import banner3 from "../../../assests/images/slider/banner3.jpeg";
 import banner4 from "../../../assests/images/slider/banner4.jpeg";
+import banner5 from "../../../assests/images/slider/banner5.jpg";
 import Possession from "../../../assests/images/possession.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHomeLg } from '@fortawesome/free-solid-svg-icons';
@@ -49,6 +50,21 @@ const BannerSlider = () => {
 
   const slides = [
     {
+      image: banner5,
+      title: "Your Dream Home Is Almost Ready to Welcome You",
+      subtitle: (
+        <>
+          Step Into a Space Crafted for Your Comfort and Lifestyle
+
+        </>
+      ),
+      subtext: (
+        <>
+          Possession Soon | Luxury Living Awaits Your Family
+        </>
+      )
+    },
+    {
       image: banner1,
       title: "Ananta Aspire is Where Luxury Meets Innovation",
       subtitle: (
@@ -56,6 +72,11 @@ const BannerSlider = () => {
           Luxury 3 & 4 BHK Apartments for Sale in Zirakpur
         </>
       ),
+      subtext: (
+        <>
+          Luxury flats starting at just ₹ 1.5 Cr.
+        </>
+      )
     },
     {
       image: banner2,
@@ -65,6 +86,11 @@ const BannerSlider = () => {
           Combining modern technology and premium comfort in Zirakpur’s most exclusive address.
         </>
       ),
+      subtext: (
+        <>
+          Luxury flats starting at just ₹ 1.5 Cr.
+        </>
+      )
     },
     {
       image: banner3,
@@ -75,6 +101,11 @@ const BannerSlider = () => {
 
         </>
       ),
+      subtext: (
+        <>
+          Luxury flats starting at just ₹ 1.5 Cr.
+        </>
+      )
     },
     {
       image: banner4,
@@ -85,7 +116,13 @@ const BannerSlider = () => {
 
         </>
       ),
+      subtext: (
+        <>
+          Luxury flats starting at just ₹ 1.5 Cr.
+        </>
+      )
     },
+    
   ];
 
   return (
@@ -98,7 +135,7 @@ const BannerSlider = () => {
           <div className='banner-wrapper w-full content-center h-screen relative overflow-hidden' key={i}>
             <img
               src={el.image}
-              alt="The Ananta Aspire - Luxurious Apartments in Zirakpur"
+              alt="The Ananta Aspire - luxury flats in Zirakpur"
               className="object-cover bg-img object-center absolute top-0 left-0 right-0 h-full w-full"
             />
             <div className='max-w-6xl mr-auto ml-0 flex absolute top-0 left-0 right-0 h-full w-full banner-slider text-white px-2.5 py-3 z-10'>
@@ -111,7 +148,7 @@ const BannerSlider = () => {
                     </div>
                     <h2 className='banner-sub-title  text-lg sm:text-xl md:text-3xl font-medium'>{el.subtitle}
                     </h2>
-                    <p className=' text-[14px] sm:text-[16px] md:text-[20px] font-medium bg-[#FF0500]  w-fit luxary'>Luxury flats starting at just ₹ 1.5 Cr.</p>
+                    <p className=' text-[14px] sm:text-[16px] md:text-[20px] font-medium bg-[#FF0500]  w-fit luxary'>{el.subtext}</p>
                     <div className='w-72 h-px bg-white mt-8'></div>
                     <ul className='flex flex-col lg:flex-row gap-4'>
                       <li className='flex gap-2 items-center text-sm font-medium'>
