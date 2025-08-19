@@ -180,9 +180,14 @@ header.scrolled.sticky.home-header {
 
 .h-screen {
     height: 100vh;
-    min-height: 675px;
+    min-height: 1000px;
 }
-
+.banner_flex_div {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 40px;
+}
 .BannerScrolled .possession {
     display: none;
 }
@@ -201,5 +206,9 @@ header.scrolled.sticky.home-header {
 @media (max-width:767px) {
     .luxary {
         padding: 3px 7px 5px;
+    }
+    .h-screen {
+        height: 100vh;
+        min-height: 700px;
     }
 }

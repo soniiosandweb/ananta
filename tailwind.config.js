@@ -305,6 +305,7 @@ module.exports = {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
       '80': ['80px', { lineHeight: '1em' }],
+      '40': ['40px', { lineHeight: '1.4em' }],
     },
     fontWeight: {
       thin: '100',
