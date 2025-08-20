@@ -1,7 +1,9 @@
 .gallery-image {
     height: 280px;
 }
-
+.yarl__portal_open {
+    z-index: 99999999;
+}
 @media (max-width: 1249px) {
     .gallery-image {
         height: 200px;

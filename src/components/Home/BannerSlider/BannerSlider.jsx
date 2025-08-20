@@ -140,7 +140,7 @@ const BannerSlider = () => {
             />
             <div className='max-w-6xl mr-auto ml-0 flex absolute top-0 left-0 right-0 h-full w-full banner-slider text-white px-2.5 py-3 z-10'>
               <div className="flex flex-col w-full h-full items-center ">
-                <div md={12} xl={10} className='w-full md:w-[81%] m-auto mt-[216px] flex banner_flex_div'>
+                <div md={12} xl={10} className='w-full md:w-[81%] m-auto mt-[110px] md:mt-[216px] flex banner_flex_div'>
                   <div className='flex h-full flex-col gap-4 lg:gap-[26px] text-left banner-wrapper'>
                     <div className="possession-txt gap-4 lg:gap-[26px] flex  flex-col justify-center w-fit">
                       <div className='w-max flex '>  <img src={Possession} alt="" className='w-[280px] sm:w-[380px] md:w-[449px] ' /></div>
