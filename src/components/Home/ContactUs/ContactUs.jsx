@@ -18,7 +18,7 @@ const ContactUs = () => {
                     <p className="text-xl leading-relaxed">Contact us today to schedule a visit to the <b>luxury 3 & 4 BHK Apartments for
                         sale in Zirakpur</b> and experience The Ananta Aspire difference.
                     </p>
-                    <p className="text-xl leading-relaxed mt-5">Contact us at: <a className="text-brown" href="mailto:info@theanantaaspire.co.in">  <span> </span>info@theanantaaspire.co.in</a></p>
+                    <p className="text-xl leading-relaxed mt-5">Contact us at: <a className="text-brown" href="mailto:contact@anantaaspirezirakpur.co">  <span> </span>contact@anantaaspirezirakpur.co</a></p>
                 </div>
                 <div className="w-full md:w-1/2 p-2.5">
                     <div className="p-4 sm:p-8" style={{ boxShadow: "0px 0px 4px 0px #0000001A" }}>
