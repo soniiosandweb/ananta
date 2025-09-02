@@ -84,7 +84,7 @@ console.log(id,'click')
   useEffect(() => {
     const listenScrollEvent = () => {
       if (locationValue[1] === "" ||  menuLinks.some(item => item.id === locationValue[1])) {
-        const newScrollClass = window.scrollY > 50 ? 'scrolled' : 'scroll';
+        const newScrollClass = window.scrollY > 50 ? 'scrolledHeader' : 'scroll';
         setScrollClass(newScrollClass);
       } else {
         setScrollClass('scroll');
@@ -106,11 +106,10 @@ console.log(id,'click')
 
     if(menuLinks.some(item => item.id === location.pathname.split("/")[1]) && location.pathname.split("/")[1] !== locationPath){
       const path = location.pathname.split("/")[1];
-      console.log(path);
       const element = document.getElementById(path);
 
       if (element) {
-        // setLocationPath(path)
+        setLocationPath(path)
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth' });
         
@@ -118,7 +117,7 @@ console.log(id,'click')
     }
 
     // eslint-disable-next-line
-  },[location, locationValue, locationPath]);
+  }, [location, locationValue, locationPath]);
 
   useEffect(() => {
     const timer = setTimeout(() => {

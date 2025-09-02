@@ -109,7 +109,7 @@ header {
     z-index: 9999;
 }
 
-header.scrolled.sticky.home-header {
+header.scrolledHeader.sticky.home-header {
     z-index: 99999999;
 }
 

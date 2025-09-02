@@ -162,9 +162,11 @@ const BannerSlider = () => {
                       </li>
                     </ul>
                   </div>
-                  <p className='text-xs font-semibold p-1 text-white w-max'>
-              *Real Photo of the Property
-            </p>
+                  {i === 0 &&
+                    <p className='text-xs font-semibold p-1 text-white w-max'>
+                      *Real Photo of the Property
+                    </p>
+                  }
                 </div>
               </div>
             </div>
